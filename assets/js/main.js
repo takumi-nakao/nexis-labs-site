@@ -176,21 +176,23 @@ function renderProjects() {
           <span class="project-badge ${project.badgeClass}">${project.badge}</span>
         </div>
         <div class="project-details">
-          <h3 class="project-title" style="margin-bottom: var(--space-xs);">${project.title}</h3>
-          <p class="project-description" style="margin-bottom: var(--space-sm); font-size: 0.85rem; line-height: 1.5;">${project.description}</p>
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-description">${project.description}</p>
           
-          <div style="margin-bottom: 6px; font-size: 0.8rem; color: var(--text-muted); text-align: left; line-height: 1.4;">
-            <strong>制作目的:</strong> ${project.purpose}
-          </div>
-          <div style="margin-bottom: var(--space-sm); font-size: 0.8rem; color: var(--text-muted); text-align: left; line-height: 1.4;">
-            <strong>担当範囲:</strong> ${project.scope}
+          <div class="project-meta-info">
+            <div class="project-meta-item">
+              <strong>制作目的:</strong> <span>${project.purpose}</span>
+            </div>
+            <div class="project-meta-item">
+              <strong>担当範囲:</strong> <span>${project.scope}</span>
+            </div>
           </div>
           
-          <div class="project-tags" style="margin-top: auto; margin-bottom: var(--space-sm);">${tagsHTML}</div>
+          <div class="project-tags">${tagsHTML}</div>
           
           <div class="project-actions">
-            <a href="${project.liveUrl}" target="_blank" class="btn btn-secondary mono-text" style="font-size: 0.75rem; padding: 0.45rem 0.75rem;">Live Site</a>
-            <a href="${project.githubUrl}" target="_blank" class="btn btn-secondary mono-text" style="font-size: 0.75rem; padding: 0.45rem 0.75rem;">Repository</a>
+            <a href="${project.liveUrl}" target="_blank" class="btn btn-secondary mono-text">Live Site</a>
+            <a href="${project.githubUrl}" target="_blank" class="btn btn-secondary mono-text">Repository</a>
           </div>
         </div>
       </div>
@@ -252,67 +254,7 @@ function initScrollAnimations() {
     );
   });
 
-  // お悩み解決セクションのスクロールアニメーション (新規追加: スライド & stagger)
-  const painRows = document.querySelectorAll('.gsap-pain-fade');
-  
-  painRows.forEach(row => {
-    const problem = row.querySelector('.pain-col-problem');
-    const dot = row.querySelector('.pain-divider-dot');
-    const solution = row.querySelector('.pain-col-solution');
-    
-    // 安全対策：要素が存在しない場合はスキップ
-    if (!problem || !dot || !solution) return;
-    
-    // 1. 課題は左から右へスライドイン
-    gsap.fromTo(problem,
-      { opacity: 0, x: -30 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: row,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
 
-    // 2. ドットは中央からポップアップ
-    gsap.fromTo(dot,
-      { opacity: 0, scale: 0 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        delay: 0.15,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: row,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-
-    // 3. 解決は右から左へスライドイン
-    gsap.fromTo(solution,
-      { opacity: 0, x: 30 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        delay: 0.28,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: row,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-  });
 
   // タイムラインUIのアニメーション（進行ラインのハイライト）
   const timelineItems = document.querySelectorAll('.timeline-item');
