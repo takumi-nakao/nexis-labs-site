@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="eSportsチームのためのWebサイト制作ソリューション。チームの信頼性を高め、新規ファン獲得やスポンサー獲得CTA導線を最適化した、熱量あるインタラクティブな公式ファンサイト・ポータルを制作します。">
+  
+  <title>eSportsチーム特化Webサイト制作 | NEXIS Labs</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <!-- Immediate Scroll Reset (CSP Compliant) -->
+  <script src="assets/js/scroll-reset.js"></script>
+</head>
+<body>
+
+  <!-- Three.js Canvas Background -->
+  <canvas id="three-canvas" aria-hidden="true"></canvas>
+
+  <!-- Glassmorphism Navigation Bar -->
+  <header class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="NEXIS Labs ホーム">
+        <div class="nav-logo-icon"></div>
+        <span>NEXIS Labs</span>
+      </a>
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <a href="index.html#about" class="nav-link">特徴</a>
+        <a href="index.html#services" class="nav-link">サービス</a>
+        <a href="index.html#projects" class="nav-link">制作実績</a>
+        <a href="index.html#security" class="nav-link">セキュリティ</a>
+        <a href="index.html#pricing" class="nav-link">料金プラン</a>
+        <a href="index.html#contact" class="btn nav-cta">無料相談・お見積り</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Service Detail Hero -->
+  <section class="hero text-center" style="min-height: 80vh; display: flex; align-items: center;">
+    <div class="glow-orb"></div>
+    <div class="container hero-content">
+      <span class="hero-tagline mono-text" style="color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.05); opacity: 1; transform: none;">FOR ESPORTS TEAMS</span>
+      <h1 class="hero-title" style="opacity: 1; transform: none;">
+        eSports Website<br>
+        <span class="gradient-text">熱狂を可視化する。</span>
+      </h1>
+      <p class="hero-subtitle" style="opacity: 1; transform: none;">
+        <strong>eSportsチーム・ゲームクラン専用のWebサイト制作。</strong><br>
+        ファンコミュニティを熱狂させ、スポンサー企業の心に刺さるCTA導線を設計。<br>
+        デザインの美しさと、ファンが即座に情報を得られる超高速ロードを両立します。
+      </p>
+      <div class="hero-ctas" style="opacity: 1; transform: none;">
+        <a href="index.html#contact" class="btn btn-cyan btn-shine">eSportsサイトの制作相談をする</a>
+        <a href="index.html#services" class="btn btn-secondary">サービス選択に戻る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="section-padding text-center" style="border-top: var(--border-glow); background: rgba(9, 9, 11, 0.5);">
+    <div class="container">
+      <span class="mono-text gradient-text">KEY FUNCTIONS // 主要機能</span>
+      <h2>ファン獲得と収益化を支える4つの機能</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--space-lg) auto;">
+        チーム運営の効率化と、ブランドプレゼンスの向上に必要な機能を美しく統合します。
+      </p>
+
+      <div class="security-grid">
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">🤝</div>
+          <h3>スポンサー募集に最適化したCTA</h3>
+          <p class="security-card-desc">チームのターゲットリーチ数、PV数、加入のメリットを可視化した特設ページ。問い合わせ（企業窓口）へのストレスフリーな誘導を行います。</p>
+        </div>
+
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">🏆</div>
+          <h3>大会実績・トーナメント戦績</h3>
+          <p class="security-card-desc">これまでに獲得した主要タイトルや、大会実績・進行状況をグリッドやタイムライン形式で動的に美しく描画します。</p>
+        </div>
+
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">👥</div>
+          <h3>選手・ストリーマー紹介</h3>
+          <p class="security-card-desc">所属メンバーのポートレート、プロフィール、活動SNS、配信チャンネル（Twitch / YouTube等）のリンクやステータスをスマートに掲載します。</p>
+        </div>
+
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">🔗</div>
+          <h3>SNS & プレスリリース配信</h3>
+          <p class="security-card-desc">公式X（旧Twitter）のリアルタイム埋め込みや、加入・移籍発表等のプレスリリースを自分たちで即座に配信できるCMS連携。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner 1 -->
+  <section class="section-padding text-center">
+    <div class="container">
+      <div class="cta-banner glass-panel" style="background: rgba(6, 182, 212, 0.05); border-color: rgba(6, 182, 212, 0.2);">
+        <div class="cta-banner-content">
+          <h3 class="cta-banner-title">ゲームの世界観に合った、最高のチームサイトを作りませんか？</h3>
+          <p class="cta-banner-desc">「テンプレートデザインではチームの魅力が伝わらない」「スポンサーを募るためにしっかりした企業窓口がほしい」など、あらゆるご相談に対応します。</p>
+          <a href="index.html#contact" class="btn btn-cyan btn-shine" style="margin-top: 0.5rem;">eSportsサイトの無料相談・見積り</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Esports specific value proposition -->
+  <section class="section-padding text-center" style="border-top: var(--border-glow); background: rgba(9, 9, 11, 0.3);">
+    <div class="container" style="max-width: 800px;">
+      <span class="mono-text gradient-text">OUR STRATEGY // 技術的アプローチ</span>
+      <h2>「激しく動くデザイン」と「表示速度」の両立</h2>
+      <p style="line-height: 1.8; margin: var(--space-md) 0 var(--space-lg) 0; text-align: left;">
+        eSportsチームのサイトでは、サイバーパンク調のビジュアルや3Dなどリッチな演出が好まれる一方、「画像やエフェクトが多すぎてスマホで全く開かない」という失敗例が多く見られます。
+        NEXIS Labsでは、WebGLやGSAPなどの描画エンジンを極限まで軽量化（クリーンコーディング）し、ファンのスマートフォンでも一瞬で表示される快適な表示スピードを保証します。
+        これにより、ファン獲得機会の損失を防ぎ、チーム運営の成長基盤を確実に支えます。
+      </p>
+      <a href="index.html#contact" class="btn btn-secondary">お見積り・ご相談フォームへ</a>
+    </div>
+  </section>
+
+  <!-- Enhanced Footer (Main site consistent) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); width: 100%;">
+        <div class="footer-brand">
+          <div class="footer-logo">NEXIS Labs</div>
+          <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: var(--space-sm);">
+            デザイン・最新フロントエンド技術・強固なセキュリティに特化し、信頼と成果を生み出す高品質な営業Webサイトを構築するプロフェッショナル集団。
+          </p>
+          <h4 class="mono-text" style="font-size: 0.75rem; color: var(--text-dark); margin-bottom: 0.25rem;">COMPANY PROFILE // 会社概要</h4>
+          <table class="footer-info-table">
+            <tr>
+              <td class="label">屋号</td>
+              <td class="value">NEXIS Labs (ネクシス ラボ)</td>
+            </tr>
+            <tr>
+              <td class="label">事業内容</td>
+              <td class="value">Webサイト制作 / LP受託開発 / UI・UX設計 / 高速化チューニング / SEO内部対策</td>
+            </tr>
+            <tr>
+              <td class="label">連絡先</td>
+              <td class="value">info@nexis-labs.com</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="footer-nav" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); width: 100%;">
+          <div class="footer-col">
+            <h4>SERVICES & WORKS // サービス</h4>
+            <a href="esports.html">eSportsサイト制作</a>
+            <a href="corporate.html">企業・LP制作</a>
+            <a href="index.html#projects">制作実績</a>
+            <a href="index.html#security">セキュリティ</a>
+          </div>
+          <div class="footer-col">
+            <h4>INFORMATION // 情報</h4>
+            <a href="index.html#about">強み・特徴</a>
+            <a href="index.html#pricing">料金プラン</a>
+            <a href="index.html#flow">制作の流れ</a>
+            <a href="index.html#faq">よくある質問</a>
+            <a href="index.html#contact">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEXIS Labs. All rights reserved.</p>
+        <p class="mono-text" style="font-size: 0.7rem; color: var(--text-dark);">
+          Built with HTML5 / CSS3 / Vanilla JS / Three.js / GSAP
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="assets/js/three-bg.js" defer></script>
+</body>
+</html>

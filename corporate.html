@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="企業・スタートアップ向けWebサイト制作サービス。洗練されたミニマルなデザイン、超高速ロード、高度なSEO内部設計により、信頼性の獲得とWeb経由のお問い合わせ（CVR）を最大化するコーポレートサイトを構築します。">
+  
+  <title>企業・LP特化Webサイト制作 | NEXIS Labs</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <!-- Immediate Scroll Reset (CSP Compliant) -->
+  <script src="assets/js/scroll-reset.js"></script>
+</head>
+<body>
+
+  <!-- Three.js Canvas Background -->
+  <canvas id="three-canvas" aria-hidden="true"></canvas>
+
+  <!-- Glassmorphism Navigation Bar -->
+  <header class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="NEXIS Labs ホーム">
+        <div class="nav-logo-icon"></div>
+        <span>NEXIS Labs</span>
+      </a>
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <a href="index.html#about" class="nav-link">特徴</a>
+        <a href="index.html#services" class="nav-link">サービス</a>
+        <a href="index.html#projects" class="nav-link">制作実績</a>
+        <a href="index.html#security" class="nav-link">セキュリティ</a>
+        <a href="index.html#pricing" class="nav-link">料金プラン</a>
+        <a href="index.html#contact" class="btn nav-cta">無料相談・お見積り</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Service Detail Hero -->
+  <section class="hero text-center" style="min-height: 80vh; display: flex; align-items: center;">
+    <div class="glow-orb" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(219, 39, 119, 0.04) 50%, transparent 100%);"></div>
+    <div class="container hero-content">
+      <span class="hero-tagline mono-text" style="color: var(--accent-purple); border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05); opacity: 1; transform: none;">FOR ENTERPRISES & STARTUPS</span>
+      <h1 class="hero-title" style="opacity: 1; transform: none;">
+        Corporate Website<br>
+        <span class="gradient-text-purple">信頼を確かな成果へ。</span>
+      </h1>
+      <p class="hero-subtitle" style="opacity: 1; transform: none;">
+        <strong>企業向けコーポレートサイト・サービスLP・採用サイト制作。</strong><br>
+        StripeやAppleのような、無駄を排除した知的な情報設計と高級感のあるビジュアルにより、<br>
+        貴社の営業組織の一部としてお問い合わせや求人エントリーを最大化するサイトを構築します。
+      </p>
+      <div class="hero-ctas" style="opacity: 1; transform: none;">
+        <a href="index.html#contact" class="btn btn-purple btn-shine">企業サイトの制作相談をする</a>
+        <a href="index.html#services" class="btn btn-secondary">サービス選択に戻る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="section-padding text-center" style="border-top: var(--border-glow); background: rgba(255, 255, 255, 0.02);">
+    <div class="container">
+      <span class="mono-text gradient-text-purple">VALUE PROPOSITION // 提供価値</span>
+      <h2>ビジネス成果（CV）を最大化する4つの要件</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--space-lg) auto;">
+        見栄えが美しいだけでなく、新規事業の売上拡大や組織の認知成長を支える基盤を構築します。
+      </p>
+
+      <div class="security-grid">
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">📈</div>
+          <h3>お問い合わせ率（CVR）の設計</h3>
+          <p class="security-card-desc">訪問ユーザーが欲しい情報に3クリック以内に到達し、アクションを起こしやすくするための視線誘導とフォーム導線の設計。</p>
+        </div>
+
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">🏛️</div>
+          <h3>確かな第一印象を創るデザイン</h3>
+          <p class="security-card-desc">取引先や大企業クライアントがアクセスした際、一瞬で「先進的で信頼がおける」という確実なブランド価値をデザインで伝えます。</p>
+        </div>
+
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">⚡</div>
+          <h3>Lighthouseに準拠した表示スピード</h3>
+          <p class="security-card-desc">モバイルユーザーの離脱を完全に防ぐ、極限まで軽量化されたコード設計。超高速のページ切り替えによる快適なUXを保証します。</p>
+        </div>
+
+        <div class="security-card glass-panel">
+          <div class="security-card-icon">🛡️</div>
+          <h3>堅牢なインフラと高セキュリティ</h3>
+          <p class="security-card-desc">Vercel等の静的配信を利用し、ハッキングやサーバーダウンのリスクをほぼゼロにし、企業のセキュリティ基準をクリアします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner 1 -->
+  <section class="section-padding text-center">
+    <div class="container">
+      <div class="cta-banner glass-panel" style="background: rgba(139, 92, 246, 0.05); border-color: rgba(139, 92, 246, 0.2);">
+        <div class="cta-banner-content">
+          <h3 class="cta-banner-title">貴社ビジネスに、最高水準のWeb技術を導入しませんか？</h3>
+          <p class="cta-banner-desc">「古いデザインから一新して採用と集客を強化したい」「セキュリティに優れた安全なサイトを作りたい」など、貴社の課題に合わせた構成とお見積りを無料で提示します。</p>
+          <a href="index.html#contact" class="btn btn-purple btn-shine" style="margin-top: 0.5rem;">企業向けサイトの無料相談・見積り</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate specific value proposition -->
+  <section class="section-padding text-center" style="border-top: var(--border-glow); background: rgba(255, 255, 255, 0.03);">
+    <div class="container" style="max-width: 800px;">
+      <span class="mono-text gradient-text-purple">OUR PHILOSOPHY // 開発のスタンス</span>
+      <h2>「ただ作る」のではなく「営業するサイト」にするために</h2>
+      <p style="line-height: 1.8; margin: var(--space-md) 0 var(--space-lg) 0; text-align: left;">
+        格安テンプレートで作られたサイトは、競合他社と同じ印象に埋もれ、貴社の本当の強みを伝えられません。
+        NEXIS Labsでは、開発前のヒアリングと競合調査に数十時間を費やし、「なぜ貴社が選ばれるのか」を視覚的に表現します。
+        SEO内部対策、レスポンシブ表示、SSL化、およびセキュリティヘッダーの設定などは別料金のオプションではなく、すべて「標準仕様」として満たした状態でWebサイトを提供します。
+      </p>
+      <a href="index.html#contact" class="btn btn-secondary">お見積り・ご相談フォームへ</a>
+    </div>
+  </section>
+
+  <!-- Enhanced Footer (Main site consistent) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); width: 100%;">
+        <div class="footer-brand">
+          <div class="footer-logo">NEXIS Labs</div>
+          <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: var(--space-sm);">
+            デザイン・最新フロントエンド技術・強固なセキュリティに特化し、信頼と成果を生み出す高品質な営業Webサイトを構築するプロフェッショナル集団。
+          </p>
+          <h4 class="mono-text" style="font-size: 0.75rem; color: var(--text-dark); margin-bottom: 0.25rem;">COMPANY PROFILE // 会社概要</h4>
+          <table class="footer-info-table">
+            <tr>
+              <td class="label">屋号</td>
+              <td class="value">NEXIS Labs (ネクシス ラボ)</td>
+            </tr>
+            <tr>
+              <td class="label">事業内容</td>
+              <td class="value">Webサイト制作 / LP受託開発 / UI・UX設計 / 高速化チューニング / SEO内部対策</td>
+            </tr>
+            <tr>
+              <td class="label">連絡先</td>
+              <td class="value">info@nexis-labs.com</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="footer-nav" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); width: 100%;">
+          <div class="footer-col">
+            <h4>SERVICES & WORKS // サービス</h4>
+            <a href="esports.html">eSportsサイト制作</a>
+            <a href="corporate.html">企業・LP制作</a>
+            <a href="index.html#projects">制作実績</a>
+            <a href="index.html#security">セキュリティ</a>
+          </div>
+          <div class="footer-col">
+            <h4>INFORMATION // 情報</h4>
+            <a href="index.html#about">強み・特徴</a>
+            <a href="index.html#pricing">料金プラン</a>
+            <a href="index.html#flow">制作の流れ</a>
+            <a href="index.html#faq">よくある質問</a>
+            <a href="index.html#contact">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEXIS Labs. All rights reserved.</p>
+        <p class="mono-text" style="font-size: 0.7rem; color: var(--text-dark);">
+          Built with HTML5 / CSS3 / Vanilla JS / Three.js / GSAP
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="assets/js/three-bg.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXIS Labsは、デザイン・技術・セキュリティに徹底的にこだわったWeb制作のスペシャリスト集団です。企業向けコーポレートサイト、LP、採用サイトから、eSportsチームの公式ポータルまで、お問い合わせ（CV）を増やすための高品質な営業サイトを構築します。">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexis-labs.com/">
+  <meta property="og:title" content="NEXIS Labs | 成果を出すWebサイト・コーポレートサイト制作">
+  <meta property="og:description" content="デザイン、最先端技術、強固なセキュリティに徹底的にこだわったWeb制作会社。eSportsチームポータルからコーポレートサイトまで、成果を生み出すWeb体験をご提案。">
+  <meta property="og:image" content="assets/images/ogp.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="NEXIS Labs | 成果を出すWebサイト・コーポレートサイト制作">
+  <meta property="twitter:description" content="デザイン、最先端技術、強固なセキュリティに徹底的にこだわったWeb制作会社。成果を出すWeb体験をご提案。">
+
+  <title>NEXIS Labs | 信頼を生み出すWebサイト制作</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <!-- Immediate Scroll Reset (CSP Compliant) -->
+  <script src="assets/js/scroll-reset.js"></script>
+</head>
+<body>
+
+  <!-- 1. Apple/Linear Style Minimal Loader -->
+  <div class="loader-wrapper" aria-hidden="true">
+    <div class="loader-logo">
+      <div class="loader-logo-icon"></div>
+      <span class="loader-logo-text">NEXIS Labs</span>
+    </div>
+    <div class="loader-progress">0%</div>
+  </div>
+
+  <!-- 2. Three.js Canvas Background -->
+  <canvas id="three-canvas" aria-hidden="true"></canvas>
+
+  <!-- 3. Glassmorphism Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="NEXIS Labs ホーム">
+        <div class="nav-logo-icon"></div>
+        <span>NEXIS Labs</span>
+      </a>
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <a href="#about" class="nav-link">特徴</a>
+        <a href="#services" class="nav-link">サービス</a>
+        <a href="#projects" class="nav-link">制作実績</a>
+        <a href="#security" class="nav-link">セキュリティ</a>
+        <a href="#pricing" class="nav-link">料金プラン</a>
+        <a href="#flow" class="nav-link">制作の流れ</a>
+        <a href="#faq" class="nav-link">よくある質問</a>
+        <a href="#contact" class="btn nav-cta">無料相談・お見積り</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="メニューを開閉する" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 4. Hero Section -->
+  <section id="hero" class="hero text-center">
+    <div class="glow-orb"></div>
+    <div class="container hero-content">
+      <span class="hero-tagline mono-text">NEXT GENERATION WEB SOLUTIONS</span>
+      <h1 class="hero-title">
+        Crafting Websites<br>
+        That <span class="gradient-text">Inspire Trust.</span>
+      </h1>
+      <p class="hero-subtitle">
+        <strong>信頼を生み出すWebサイト制作。</strong><br>
+        企業サイトからeSportsチームサイトまで、デザイン・技術・セキュリティにこだわり抜き、<br>
+        お問い合わせやブランド価値を最大化する高品質なWebサイトを制作します。
+      </p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-cyan btn-shine">ゲームチーム向け / 企業向けを見る</a>
+        <a href="#contact" class="btn btn-secondary">無料相談はこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Pain Points & Solution Section -->
+  <section id="pain-points" class="section-padding" style="border-top: var(--border-glow); background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <div class="text-center">
+        <span class="mono-text gradient-text">ANALYSIS // 課題分析</span>
+        <h2 style="margin-top: var(--space-xs);">こんなお悩みはありませんか？</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-md) auto;">
+          多くの企業やチームが、Webサイトの活用において以下のような課題を抱えています。
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <!-- Row 1 -->
+        <div class="pain-row gsap-pain-fade">
+          <div class="pain-col-problem">
+            <span class="pain-badge-mini">PROBLEM // 課題</span>
+            <h3>テンプレート感のある安っぽいサイトは避けたい</h3>
+          </div>
+          <div class="pain-col-divider">
+            <div class="pain-divider-dot"></div>
+          </div>
+          <div class="pain-col-solution">
+            <span class="solution-badge-mini">SOLUTION // 解決策</span>
+            <h3>完全オリジナルデザイン & 最先端演出</h3>
+            <p>テンプレートを一切使わず、貴社のブランド価値をFigmaでゼロから設計。GSAPによる上品なアニメーションやThree.jsを用いた3D表現で、競合サイトと決定的な差をつけます。</p>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="pain-row gsap-pain-fade">
+          <div class="pain-col-problem">
+            <span class="pain-badge-mini">PROBLEM // 課題</span>
+            <h3>古いサイトを、モダンなデザインに一新したい</h3>
+          </div>
+          <div class="pain-col-divider">
+            <div class="pain-divider-dot"></div>
+          </div>
+          <div class="pain-col-solution">
+            <span class="solution-badge-mini">SOLUTION // 解決策</span>
+            <h3>信頼感を獲得するブランドデザイン</h3>
+            <p>単なるビジュアルの刷新に留まらず、入念な競合分析と情報設計により、お取引先や見込み顧客が一瞬で信頼を寄せるプロフェッショナルなサイトへと再構築します。</p>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="pain-row gsap-pain-fade">
+          <div class="pain-col-problem">
+            <span class="pain-badge-mini">PROBLEM // 課題</span>
+            <h3>スマホやタブレットで表示が崩れていて困っている</h3>
+          </div>
+          <div class="pain-col-divider">
+            <div class="pain-divider-dot"></div>
+          </div>
+          <div class="pain-col-solution">
+            <span class="solution-badge-mini">SOLUTION // 解決策</span>
+            <h3>破綻のない完全レスポンシブコーディング</h3>
+            <p>あらゆる画面解像度に対応するモバイルファースト設計。PCはもちろん、スマホからでも一瞬で内容が理解でき、ノンストレスで操作できるレイアウトを保証します。</p>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="pain-row gsap-pain-fade">
+          <div class="pain-col-problem">
+            <span class="pain-badge-mini">PROBLEM // 課題</span>
+            <h3>アクセスはあるが、お問い合わせや採用応募が増えない</h3>
+          </div>
+          <div class="pain-col-divider">
+            <div class="pain-divider-dot"></div>
+          </div>
+          <div class="pain-col-solution">
+            <span class="solution-badge-mini">SOLUTION // 解決策</span>
+            <h3>コンバージョン（CV）への明確な導線設計</h3>
+            <p>ユーザー行動心理に基づくEFO（入力フォーム最適化）、適切な箇所に自然に配置されたCTA、ユーザーの不安を払拭する情報配置により、アクション率を最大化します。</p>
+          </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="pain-row gsap-pain-fade">
+          <div class="pain-col-problem">
+            <span class="pain-badge-mini">PROBLEM // 課題</span>
+            <h3>eSportsチームの認知とスポンサーを獲得したい</h3>
+          </div>
+          <div class="pain-col-divider">
+            <div class="pain-divider-dot"></div>
+          </div>
+          <div class="pain-col-solution">
+            <span class="solution-badge-mini">SOLUTION // 解決策</span>
+            <h3>熱狂を伝えるポータル ＋ 営業機能の最適化</h3>
+            <p>チームの世界観を宿す美麗デザインや選手ギャラリーによりファンを熱狂させつつ、スポンサー企業が必要とするデータやメリットを可視化した特設導線を構築します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. About Section (特徴の視覚的アピール) -->
+  <section id="about" class="section-padding text-center">
+    <div class="container">
+      <span class="mono-text gradient-text">01 // OUR STRENGTHS</span>
+      <h2 style="margin-top: var(--space-xs);">NEXIS Labsの強み</h2>
+      <p style="max-width: 700px; margin: 0 auto var(--space-lg) auto;">
+        テンプレート制作では絶対に真似できない、最高峰のWeb品質を支える7つの強みです。
+      </p>
+
+      <div class="security-grid">
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>完全レスポンシブ対応</h3>
+          <p class="security-card-desc">PC・タブレット・モバイルのあらゆる解像度を想定し、それぞれに最適化したアライメントと操作性を提供します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>GSAPによる滑らかなアニメーション</h3>
+          <p class="security-card-desc">スクロール連動のフェードインやタイムラインなど、上品で高級感のあるイージング演出により、離脱を防ぐ視覚体験を施します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Three.js 3Dテクノロジー</h3>
+          <p class="security-card-desc">WebGLを用いた軽量かつ先進的な3D背景により、競合サイトと決定的に差をつける「近未来的で洗練された空気感」を演出します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>徹底的な内部SEO対策</h3>
+          <p class="security-card-desc">適切な見出し構造、メタ情報、高速な読み込み速度など、検索エンジン（Google）に高く評価されるコーディングを徹底します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>強固なセキュリティ設計</h3>
+          <p class="security-card-desc">SSL暗号化（HTTPS）はもちろん、クリックジャッキングやXSSを防ぐ「Security Headers」の設定により安全性を確保します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>パフォーマンス最適化</h3>
+          <p class="security-card-desc">コード記述の軽量化、アセットの最適化により、Google Lighthouse評価で超高速の表示スピード（95点以上）を達成します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Services & Branch Section -->
+  <section id="services" class="section-padding branch-section text-center" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="glow-orb-2" style="top: 20%; right: 10%;"></div>
+    <div class="container">
+      <span class="mono-text gradient-text">02 // SERVICES</span>
+      <h2 style="margin-top: var(--space-xs);">ターゲット別 サービスゲートウェイ</h2>
+      <p style="max-width: 600px; margin: 0 auto;">
+        NEXIS Labsでは、お客様の目標に合わせて「eSportsチーム向け」と「企業向け」の2つの特化アプローチをご提供しています。詳細は各専用ページをご覧ください。
+      </p>
+
+      <div class="branch-grid">
+        <!-- esports card -->
+        <article class="branch-card esports-gateway glass-panel gsap-fade-up">
+          <div>
+            <div class="branch-icon">🎮</div>
+            <h3>eSportsチーム向け Webサイト</h3>
+            <p>熱狂を可視化し、チームの格を高めることで、ファンコミュニティ活性化とスポンサー獲得を強力に推進します。</p>
+            <ul class="branch-features">
+              <li>スポンサーアピールに特化したCTA設計</li>
+              <li>大会戦績・獲得タイトルの動的ギャラリー</li>
+              <li>所属選手・ストリーマーの魅力的紹介</li>
+              <li>SNS・配信状況（Twitch等）のリアルタイム連携</li>
+            </ul>
+          </div>
+          <a href="esports.html" class="btn btn-cyan btn-shine" style="width: 100%;">eSports専用ページへ →</a>
+        </article>
+
+        <!-- corporate card -->
+        <article class="branch-card corporate-gateway glass-panel gsap-fade-up">
+          <div>
+            <div class="branch-icon">🏢</div>
+            <h3>企業・スタートアップ向け Webサイト</h3>
+            <p>信頼性と知的なデザインを軸にし、見込み顧客からのお問い合わせ（CV）や優秀な人材の採用を最大化する営業サイト。</p>
+            <ul class="branch-features">
+              <li>信頼性を最重視した洗練された余白設計</li>
+              <li>お問い合わせ（CVR）を高める導線・心理設計</li>
+              <li>企業価値を的確に伝える情報アーキテクチャ</li>
+              <li>Google評価に準拠した表示スピードとSEO</li>
+            </ul>
+          </div>
+          <a href="corporate.html" class="btn btn-purple btn-shine" style="width: 100%;">企業向け専用ページへ →</a>
+        </article>
+      </div>
+
+      <!-- CTA 1 (Services下) -->
+      <div class="cta-banner glass-panel gsap-fade-up" style="margin-top: var(--space-xl); background: rgba(6, 182, 212, 0.03); border-color: rgba(6, 182, 212, 0.15);">
+        <div class="cta-banner-content">
+          <h3 class="cta-banner-title">自社に最適なWeb構成を相談してみませんか？</h3>
+          <p class="cta-banner-desc">お悩みやご要望に合わせ、無駄のない最適なプランを丁寧にご提案いたします。相談は完全に無料です。</p>
+          <a href="#contact" class="btn btn-cyan btn-shine" style="margin-top: 0.5rem;">無料で相談する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Featured Projects Section -->
+  <section id="projects" class="section-padding text-center">
+    <div class="container">
+      <span class="mono-text gradient-text">03 // FEATURED PROJECTS</span>
+      <h2 style="margin-top: var(--space-xs);">制作実績</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--space-lg) auto;">
+        NEXIS Labsがデザイン・開発を手がけた、厳選されたプロジェクト事例です。（PC3列 / タブレット2列 / スマホ1列で表示）
+      </p>
+
+      <!-- Dynamic projects populated by assets/js/projects.js -->
+      <div id="projects-container" class="projects-grid"></div>
+
+      <!-- CTA 2 (Projects下) -->
+      <div class="cta-banner glass-panel gsap-fade-up" style="margin-top: var(--space-xl); background: rgba(139, 92, 246, 0.03); border-color: rgba(139, 92, 246, 0.15);">
+        <div class="cta-banner-content">
+          <h3 class="cta-banner-title">「この品質のサイト」を、あなたのビジネスにも。</h3>
+          <p class="cta-banner-desc">制作実績と同等以上の高品質なコーディングとインタラクションを、お客様のご予算に合わせて開発します。</p>
+          <a href="#contact" class="btn btn-purple btn-shine" style="margin-top: 0.5rem;">お見積り依頼はこちら</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Security & Core Performance -->
+  <section id="security" class="section-padding text-center" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <span class="mono-text gradient-text">04 // INFRASTRUCTURE & ACCESSIBILITY</span>
+      <h2 style="margin-top: var(--space-xs);">高速表示と安全性を標準搭載</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--space-md) auto;">
+        デザインの美しさだけでなく、ビジネスサイトとして満たすべき厳しいインフラ水準をクリアします。
+      </p>
+
+      <div class="security-grid">
+        <!-- === 高速表示 (Performance) 3項目 === -->
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Lighthouse速度最適化</h3>
+          <p class="security-card-desc">徹底的なコード軽量化と画像の最適化により、Google Lighthouseで超高速表示（95点以上）を達成します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </div>
+          <h3>静的配信インフラ (CDN)</h3>
+          <p class="security-card-desc">Vercel等のグローバルCDNサーバーを活用し、世界中どこからでも一瞬でWebサイトが表示される環境を提供します。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>モバイル高速ロード</h3>
+          <p class="security-card-desc">回線が細い屋外や古いスマートフォン端末であっても、ストレスを与えないデータ読み込み設計を標準搭載します。</p>
+        </div>
+
+        <!-- === 安全性 (Security) 3項目 === -->
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>SSL暗号化通信 (HTTPS)</h3>
+          <p class="security-card-desc">個人情報や送信データを高度に暗号化し、ブラウザ警告を防ぎ、取引先やユーザーに対して確固たる安心感を与えます。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Security Headers最適設定</h3>
+          <p class="security-card-desc">悪質なiframe埋め込みによる乗っ取りや、XSS攻撃を防ぐセキュリティヘッダーを設定し、脆弱性対策を行います。</p>
+        </div>
+
+        <div class="security-card glass-panel gsap-fade-up">
+          <div class="security-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>スマートなスパム防御</h3>
+          <p class="security-card-desc">ユーザーにわずらわしい文字入力を強要せず、バックグラウンドで安全にロボットを弾く高度なスパム防御策をご提案します。</p>
+        </div>
+      </div>
+
+      <div class="security-note gsap-fade-up">
+        <p>
+          <strong>💡 最適構成のご提案スタンス:</strong><br>
+          すべてのサイトに過剰なインフラや複雑な保守を強制することは一切ありません。ビジネスの段階、必要とする機能、およびご予算に合わせて、無駄がない最も費用対効果の高い構成を個別に組み立ててご提案いたします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Pricing Section -->
+  <section id="pricing" class="section-padding text-center">
+    <div class="container">
+      <span class="mono-text gradient-text">05 // PRICING PLANS</span>
+      <h2 style="margin-top: var(--space-xs);">料金プラン</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--space-lg) auto;">
+        小規模なランディングページから、先進的なインタラクションを導入したプレミアム構成まで、納得感のある3つの目安プランです。
+      </p>
+
+      <div class="pricing-grid">
+        <!-- light plan -->
+        <article class="pricing-card glass-panel gsap-fade-up">
+          <div class="pricing-header">
+            <h3 class="pricing-name">ライトプラン</h3>
+            <div class="pricing-price">30,000円〜<span>50,000円 (目安)</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li>ランディングページ (LP) 制作</li>
+            <li>3ページ程度までの小規模な構成</li>
+            <li>完全スマートフォン対応</li>
+            <li>お問い合わせフォーム設置</li>
+            <li>基本SEO内部対策</li>
+            <li>公開・サーバー導入サポート</li>
+          </ul>
+          <div class="pricing-footer">
+            <a href="#contact" class="btn btn-secondary" style="width: 100%;">このプランで相談する</a>
+          </div>
+        </article>
+
+        <!-- standard plan (popular) -->
+        <article class="pricing-card recommended glass-panel gsap-fade-up">
+          <div class="pricing-header">
+            <h3 class="pricing-name">スタンダードプラン</h3>
+            <div class="pricing-price">55,000円〜<span>80,000円 (目安)</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li>コーポレートサイト / eSportsチームサイト向け</li>
+            <li>5〜8ページ程度の適切な情報設計</li>
+            <li>オリジナルデザイン設計 (テンプレート不使用)</li>
+            <li>完全スマートフォン対応</li>
+            <li>お問い合わせフォーム設置</li>
+            <li>GSAPスクロール連動アニメーション</li>
+            <li>徹底したSEO内部対策</li>
+            <li>サーバー接続・公開サポート</li>
+          </ul>
+          <div class="pricing-footer">
+            <a href="#contact" class="btn btn-cyan btn-shine" style="width: 100%;">このプランで相談する</a>
+          </div>
+        </article>
+
+        <!-- premium plan -->
+        <article class="pricing-card premium glass-panel gsap-fade-up" style="border: 1px solid rgba(139, 92, 246, 0.25);">
+          <div class="pricing-header">
+            <h3 class="pricing-name" style="background: linear-gradient(135deg, #fff, var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">プレミアムプラン</h3>
+            <div class="pricing-price">90,000円〜<span>要相談</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li>ハイエンドなフルカスタマイズデザイン</li>
+            <li>大規模サイト・複数ページ（要相談）</li>
+            <li>GSAPによる先進的で滑らかなアニメーション</li>
+            <li>Three.jsによる高品質な3D演出（必要に応じて）</li>
+            <li>多機能お問い合わせフォーム設置</li>
+            <li>Googleスピード満点チューニング</li>
+            <li>インフラ構築・Vercel配信サポート</li>
+            <li>納品後の更新保守サポート (1ヶ月無料)</li>
+          </ul>
+          <div class="pricing-footer">
+            <a href="#contact" class="btn btn-purple btn-shine" style="width: 100%;">このプランで相談する</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Extra pricing details -->
+      <div class="pricing-extras gsap-fade-up">
+        <div class="pricing-extra-group">
+          <h3 class="pricing-extra-title">追加オプション</h3>
+          <ul class="pricing-extra-list">
+            <li>ページ追加：10,000円〜 / 1ページ</li>
+            <li>ブログ機能（ヘッドレスCMSなど）：要相談</li>
+            <li>予約・スケジュール管理システム：要相談</li>
+            <li>会員システム・ユーザー認証機能：要相談</li>
+            <li>継続的なサイト更新・保守・管理：要相談</li>
+          </ul>
+        </div>
+
+        <div class="pricing-extra-group">
+          <h3 class="pricing-extra-title">標準で無料対応</h3>
+          <ul class="pricing-extra-list">
+            <li>ご相談・お見積りの作成（完全無料）</li>
+            <li>ドメインの取得・DNS設定・サーバー登録サポート</li>
+            <li>スマートフォン・タブレットでの表示最適化</li>
+            <li>公開が完了するまでの全般的な技術サポート</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="pricing-notes">
+        ※上記はあくまで目安の価格帯です。サイトの規模、ページ数、必要なアニメーションの度合いに応じて、個別で正式なお見積りを提示いたします。<br>
+        また、<strong>ご予算の範囲内で最善のパフォーマンスを発揮する段階的な開発のご提案も可能</strong>ですので、まずはお気軽にご相談ください。
+      </p>
+
+      <!-- CTA 3 (Pricing下) -->
+      <div class="cta-banner glass-panel gsap-fade-up" style="margin-top: var(--space-lg); background: rgba(255, 255, 255, 0.02); border-color: rgba(255, 255, 255, 0.08);">
+        <div class="cta-banner-content">
+          <h3 class="cta-banner-title">まずはお気軽にお見積り・ご予算をお聞かせください</h3>
+          <p class="cta-banner-desc">「この予算で何ができる？」といった曖昧なご相談でも大歓迎です。最適な解決アプローチを丁寧にご提案します。</p>
+          <a href="#contact" class="btn btn-primary btn-shine" style="margin-top: 0.5rem;">お見積りシミュレートをする</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Flow Section -->
+  <section id="flow" class="section-padding text-center" style="background: rgba(255, 255, 255, 0.01);">
+    <div class="container">
+      <span class="mono-text gradient-text">06 // WORKFLOW</span>
+      <h2 style="margin-top: var(--space-xs);">制作の流れ</h2>
+      <p style="max-width: 600px; margin: 0 auto;">
+        初回ご相談から運用開始、その後の保守管理まで、無駄なくスピーディーに進行します。
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-badge">1</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">ご相談・お悩みヒアリング</h3>
+            <p class="timeline-desc">お問い合わせフォームからご要望や現在のお悩みをご連絡ください。メールまたはオンラインにて課題をお聞きします。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">2</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">最適なプラン提案・お見積り</h3>
+            <p class="timeline-desc">ご要望、ターゲット層、ライバルサイトの分析をもとに、無駄を削ぎ落とした最適な構成案と正確なお見積りを提示します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">3</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">ワイヤーフレーム & デザイン設計</h3>
+            <p class="timeline-desc">サイトの構成案（ワイヤーフレーム）と、Figma等を用いたデザインカンプを作成。洗練された外観をお客様と固めていきます。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">4</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">開発・インタラクション実装</h3>
+            <p class="timeline-desc">確定したデザインをもとに、表示速度が最も早くなる手法でコーディングを行い、GSAP等の動きを細かく組み込みます。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">5</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">表示テスト・入念な動作確認</h3>
+            <p class="timeline-desc">各種PC・スマホ・ブラウザ実機での表示チェック、フォーム動作確認、およびGoogleスピード評価の検証を入念に行います。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">6</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">本番公開・SEO申請代行</h3>
+            <p class="timeline-desc">ご指定のサーバーへアップロード、またはVercel等のインフラ接続を行い、世界中に公開します。Googleへのインデックス登録も代行します。</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">7</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">アフターフォロー・保守管理</h3>
+            <p class="timeline-desc">納品後も安全にサイトが稼働し続けるよう、ご要望に応じた保守プランにのっとり、ドメイン更新やセキュリティ管理を継続します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FAQ Section -->
+  <section id="faq" class="section-padding text-center">
+    <div class="container">
+      <span class="mono-text gradient-text">07 // FAQ</span>
+      <h2 style="margin-top: var(--space-xs);">よくあるご質問</h2>
+      <p style="max-width: 600px; margin: 0 auto;">
+        制作に関してよくいただくご質問にお答えします。
+      </p>
+
+      <div class="faq-list">
+        <div class="faq-item glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Q. WordPressに対応できますか？</span>
+            <div class="faq-icon-box" aria-hidden="true"></div>
+          </button>
+          <div class="faq-content">
+            <p>はい、対応しております。従来通りのテンプレート構築はもちろん、静的ファイルを介してハッキングを完全に防ぎつつ高速表示を実現する「ヘッドレスWordPress (Jamstack構成)」での構築など、最先端の連携手法も得意としております。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Q. Vercel(バーセル)とは何ですか？</span>
+            <div class="faq-icon-box" aria-hidden="true"></div>
+          </button>
+          <div class="faq-content">
+            <p>Vercelは、モダンなWeb開発において世界標準となりつつある超高速かつ強固な静的ウェブ配信サーバープラットフォームです。サーバーダウンが起きず、世界中のどこからアクセスしても極めてスピーディーにサイトを表示させることができるため、NEXIS Labsでは主力インフラとして推奨しています。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Q. ドメインの取得方法がわからないのですが、代行してもらえますか？</span>
+            <div class="faq-icon-box" aria-hidden="true"></div>
+          </button>
+          <div class="faq-content">
+            <p>はい、ドメインの新規取得、DNS（ネームサーバー）の設定、およびサーバーの接続・移行手続きまで、すべて標準サービス（無料）でサポートさせていただきますので、専門知識がなくても全く問題ありません。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Q. 納品後のサイト更新や修正もお願いできますか？</span>
+            <div class="faq-icon-box" aria-hidden="true"></div>
+          </button>
+          <div class="faq-content">
+            <p>はい、承っております。月々の定期保守更新プランを契約いただくほか、必要になったタイミングで都度単発の修正をご依頼いただく形でも柔軟に対応しております。また、お客様自身で更新できるようCMSマニュアル等のご用意も可能です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Q. SEO対策（検索上位表示）は何か特別な対策をしてくれますか？</span>
+            <div class="faq-icon-box" aria-hidden="true"></div>
+          </button>
+          <div class="faq-content">
+            <p>NEXIS Labsでは、検索エンジンのクローラーが理解しやすいセマンティックなHTML構造、モバイルでの表示速度、SSL対応、および構造化メタデータの埋め込みといった「現代のSEOで最重要とされる基礎構造」を、別料金をいただくことなく「標準仕様」として完全に満たした状態で納品いたします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Contact Form Section -->
+  <section id="contact" class="section-padding text-center">
+    <div class="container">
+      <span class="mono-text gradient-text">08 // CONTACT</span>
+      <h2 style="margin-top: var(--space-xs);">無料相談・お見積り</h2>
+      <p style="max-width: 600px; margin: 0 auto;">
+        フォームよりお気軽にご連絡ください。通常24時間以内に折り返しご連絡いたします。
+      </p>
+
+      <div class="contact-container">
+        <!-- 上部の信頼性バッジ -->
+        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: var(--space-md);">
+          <span style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); color: var(--accent-cyan); font-size: 0.8rem; font-weight: bold; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);">✓ ご相談完全無料</span>
+          <span style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); color: var(--accent-cyan); font-size: 0.8rem; font-weight: bold; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);">✓ お見積り完全無料</span>
+          <span style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.2); color: var(--accent-purple); font-size: 0.8rem; font-weight: bold; padding: 0.35rem 0.85rem; border-radius: var(--radius-full);">✓ 最短翌営業日以内に返信</span>
+        </div>
+
+        <div id="form-status" class="form-status" aria-live="polite"></div>
+        
+        <form id="contact-form" class="contact-form glass-panel" action="#" method="POST">
+          <div class="form-group">
+            <label for="inquiry_type" class="form-label">お問い合わせの種類 <span style="color: var(--accent-cyan);">*</span></label>
+            <select id="inquiry_type" name="inquiry_type" class="form-input" required style="appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22feather feather-chevron-down%22><polyline points=%226 9 12 15 18 9%22></polyline></svg>'); background-repeat: no-repeat; background-position: right 15px center; padding-right: 40px;">
+              <option value="" disabled selected>選択してください</option>
+              <option value="new_site">新規Webサイト・LPの制作</option>
+              <option value="revision">既存ホームページの修正・カスタマイズ</option>
+              <option value="maintenance">ホームページの定期更新・保守運用</option>
+              <option value="renewal">デザインのリニューアル</option>
+              <option value="seo">SEO対策・検索順位の改善</option>
+              <option value="performance">表示速度の高速化チューニング</option>
+              <option value="form_add">お問い合わせフォームの追加・改修</option>
+              <option value="animation_add">GSAPや3Dアニメーション演出の追加</option>
+              <option value="others">その他のご相談・お見積り</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="form-label">会社名（任意）</label>
+            <input type="text" id="company" name="company" class="form-input" placeholder="株式会社〇〇">
+          </div>
+
+          <div class="form-group">
+            <label for="name" class="form-label">ご担当者氏名 <span style="color: var(--accent-cyan);">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" required placeholder="山田 太郎">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">メールアドレス <span style="color: var(--accent-cyan);">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" required placeholder="yamada@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">電話番号（任意）</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="090-0000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">ご相談内容 <span style="color: var(--accent-cyan);">*</span></label>
+            <textarea id="message" name="message" class="form-input" required placeholder="ご希望のサイト規模、ご予算感、納期、または現在のお悩み等についてご記入ください。"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-cyan btn-shine" style="width: 100%; margin-top: var(--space-xs); font-size: 1.1rem; padding: 1rem 2rem;">この内容で無料相談・お見積りする</button>
+        </form>
+
+        <p class="contact-note">
+          ※お急ぎの場合もお問い合わせフォームまたはメールよりご連絡ください。<br>
+          ※メールアドレス：info@nexis-labs.com （仮）
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Footer (会社概要 & サイトマップの強化) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); width: 100%;">
+        <!-- left: company details -->
+        <div class="footer-brand">
+          <div class="footer-logo">NEXIS Labs</div>
+          <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: var(--space-sm);">
+            デザイン・最新フロントエンド技術・強固なセキュリティに特化し、信頼と成果を生み出す高品質な営業Webサイトを構築するプロフェッショナル集団。
+          </p>
+          <h4 class="mono-text" style="font-size: 0.75rem; color: var(--text-dark); margin-bottom: 0.25rem;">COMPANY PROFILE // 会社概要</h4>
+          <table class="footer-info-table">
+            <tr>
+              <td class="label">屋号</td>
+              <td class="value">NEXIS Labs (ネクシス ラボ)</td>
+            </tr>
+            <tr>
+              <td class="label">事業内容</td>
+              <td class="value">Webサイト制作 / LP受託開発 / UI・UX設計 / 高速化チューニング / SEO内部対策</td>
+            </tr>
+            <tr>
+              <td class="label">連絡先</td>
+              <td class="value">info@nexis-labs.com</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- right: sitemap grids -->
+        <div class="footer-nav" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); width: 100%;">
+          <div class="footer-col">
+            <h4>SERVICES & WORKS // サービス</h4>
+            <a href="esports.html">eSportsサイト制作</a>
+            <a href="corporate.html">企業・LP制作</a>
+            <a href="#projects">制作実績</a>
+            <a href="#security">セキュリティ</a>
+          </div>
+          <div class="footer-col">
+            <h4>INFORMATION // 情報</h4>
+            <a href="#about">強み・特徴</a>
+            <a href="#pricing">料金プラン</a>
+            <a href="#flow">制作の流れ</a>
+            <a href="#faq">よくある質問</a>
+            <a href="#contact">お問い合わせ</a>
+            <a href="https://github.com/nexis-labs" target="_blank" style="display: flex; align-items: center; gap: 4px;">
+              GitHub Repository
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEXIS Labs. All rights reserved.</p>
+        <p class="mono-text" style="font-size: 0.7rem; color: var(--text-dark);">
+          Built with HTML5 / CSS3 / Vanilla JS / Three.js / GSAP
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/projects.js" defer></script>
+  <script src="assets/js/three-bg.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
