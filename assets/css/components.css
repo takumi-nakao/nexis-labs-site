@@ -587,23 +587,55 @@
 /* ==========================================================================
    PRICING SECTION
    ========================================================================== */
+.pricing-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 40px !important; /* PC含むすべてで矢印ボタンの左右スペースを確保 */
+}
+
+/* PC含むすべてで料金プラン用の矢印ボタンを常時表示する */
+.pricing-carousel-wrapper .carousel-btn {
+  display: flex !important;
+}
+
+.pricing-carousel-wrapper .prev-btn {
+  left: -15px !important;
+}
+
+.pricing-carousel-wrapper .next-btn {
+  right: -15px !important;
+}
+
 .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-  align-items: stretch;
+  display: flex !important; /* PC含むすべてで横並び flex に変更 */
+  flex-direction: row !important;
+  grid-template-columns: none !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
+  gap: var(--space-md) !important;
+  padding: var(--space-md) var(--space-xs) !important;
+  scrollbar-width: none !important;
+}
+
+.pricing-grid::-webkit-scrollbar {
+  display: none !important;
 }
 
 .pricing-card {
-  padding: 1.75rem !important; /* PCでもパディングを適度に狭め、高さを抑える */
+  flex: 0 0 350px !important; /* PC・タブレット共通でカード幅を350px固定に設定 */
+  scroll-snap-align: center !important;
+  margin: 0 !important;
+  min-width: 280px !important;
+  min-height: 480px !important;
+  padding: 1.75rem !important;
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  min-height: 480px; /* カード間の高さをある程度均等に保ちつつコンパクト化 */
 }
 
 .pricing-card.recommended {
@@ -1123,32 +1155,27 @@ textarea.form-input {
 
 @media (max-width: 992px) {
   /* 共通のカルーセルレイアウト上書き（スマホ・タブレット） */
-  .pricing-carousel-wrapper,
   .branch-carousel-wrapper,
   .projects-carousel-wrapper {
     padding: 0 20px !important;
   }
 
-  .pricing-carousel-wrapper .carousel-btn,
   .branch-carousel-wrapper .carousel-btn,
   .projects-carousel-wrapper .carousel-btn {
-    display: flex !important; /* ボタンを表示 */
+    display: flex !important;
   }
 
-  .pricing-carousel-wrapper .prev-btn,
   .branch-carousel-wrapper .prev-btn,
   .projects-carousel-wrapper .prev-btn {
     left: -5px !important;
   }
 
-  .pricing-carousel-wrapper .next-btn,
   .branch-carousel-wrapper .next-btn,
   .projects-carousel-wrapper .next-btn {
     right: -5px !important;
   }
 
   /* カルーセル用の横並び flex コンテナ化 */
-  .pricing-grid,
   .branch-grid,
   .projects-grid {
     display: flex !important;
@@ -1163,14 +1190,12 @@ textarea.form-input {
     scrollbar-width: none !important;
   }
 
-  .pricing-grid::-webkit-scrollbar,
   .branch-grid::-webkit-scrollbar,
   .projects-grid::-webkit-scrollbar {
     display: none !important;
   }
 
   /* 各カードの幅を横スライド用に85%化 */
-  .pricing-card,
   .branch-card,
   .project-card {
     flex: 0 0 85% !important;
@@ -1179,20 +1204,7 @@ textarea.form-input {
     min-width: 280px !important;
   }
 
-  /* 料金プランモバイル専用調整（高さを詰め、表示幅不足による縦伸びを防止） */
-  .pricing-card {
-    padding: 1.25rem 1.15rem !important; /* 左右・上下のパディングを大幅に最適化 */
-    min-height: 410px !important; /* 縦長になりすぎないようコンパクトに抑制 */
-  }
 
-  .pricing-features {
-    margin: var(--space-xs) 0 !important;
-    gap: 0.45rem !important;
-  }
-
-  .pricing-features li {
-    font-size: 0.82rem !important;
-  }
 
   /* コンテナ余白・グリッド枠の最適化 (タブレット) */
   .container {
@@ -1229,38 +1241,35 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
-  /* 料金プラン：スマホ表示（768px以下）では横フリックカルーセルに切り替える */
+  /* スマホ用料金プラン表示幅最適化 (カード幅を85%にし、フォントを小さく) */
   .pricing-carousel-wrapper {
-    padding: 0 20px !important; /* 矢印ボタン表示用の余白 */
+    padding: 0 20px !important;
   }
 
-  .pricing-carousel-wrapper .carousel-btn {
-    display: flex !important; /* スマホのみ左右ボタンを表示 */
+  .pricing-carousel-wrapper .prev-btn {
+    left: -5px !important;
   }
 
-  .pricing-grid {
-    display: flex !important; /* グリッドから横並びflexに変換 */
-    flex-direction: row !important;
-    grid-template-columns: none !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    scroll-behavior: smooth !important;
-    -webkit-overflow-scrolling: touch !important;
-    gap: var(--space-md) !important;
-    padding: var(--space-md) var(--space-sm) !important;
-  }
-
-  .pricing-grid::-webkit-scrollbar {
-    display: none !important;
+  .pricing-carousel-wrapper .next-btn {
+    right: -5px !important;
   }
 
   .pricing-card {
-    flex: 0 0 85% !important; /* 横幅の85%サイズにしてスライド吸着 */
-    scroll-snap-align: center !important;
-    margin: 0 !important;
-    min-width: 280px !important;
-    min-height: 410px !important; /* スマホ用高さの抑制 */
+    flex: 0 0 85% !important;
+    padding: 1.25rem 1.15rem !important;
+    min-height: 410px !important;
   }
+
+  .pricing-features {
+    margin: var(--space-xs) 0 !important;
+    gap: 0.45rem !important;
+  }
+
+  .pricing-features li {
+    font-size: 0.82rem !important;
+  }
+
+
 
 
 

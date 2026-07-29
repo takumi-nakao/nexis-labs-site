@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollAnimations();
   // 料金プランはスマホのみカルーセル化（breakpoint = 768）、タブレットは2列グリッド表示
-  initGenericCarousel('.pricing-carousel-wrapper', '.pricing-grid', '.pricing-card', 3500, 768);
+  initGenericCarousel('.pricing-carousel-wrapper', '.pricing-grid', '.pricing-card', 3500, 9999);
   
   // サービスゲートウェイはタブレット・スマホ両方でカルーセル化
   initGenericCarousel('.branch-carousel-wrapper', '.branch-grid', '.branch-card', 3500, 992);
