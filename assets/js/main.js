@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initContactForm();
   initScrollAnimations();
+  initPricingCarousel();
 });
 
 // 全てのリソースが読み込まれ、高さが確定した時点で位置計算をリフレッシュ
@@ -382,3 +383,113 @@ function initContactForm() {
     }
   });
 }
+
+/**
+ * 料金プランカルーセルの制御（タブレット・スマホ対応）
+ * 3.5秒ごとに自動スクロールし、ユーザー操作時にはタイマーをポーズします。
+ */
+function initPricingCarousel() {
+  const grid = document.querySelector('.pricing-grid');
+  const cards = document.querySelectorAll('.pricing-card');
+  if (!grid || cards.length === 0) return;
+
+  let intervalId = null;
+  let currentIndex = 0;
+  const slideDuration = 3500; // 3.5秒（3500ミリ秒）
+  let isTransitioning = false; // 重複スクロール防止フラグ
+
+  // スライドを次のカードへ移動する関数
+  function startAutoSlide() {
+    stopAutoSlide();
+    intervalId = setInterval(() => {
+      // 画面幅が992pxより大きい（PC表示）の場合は処理しない
+      if (window.innerWidth > 992) return;
+
+      currentIndex = (currentIndex + 1) % cards.length;
+      scrollToIndex(currentIndex);
+    }, slideDuration);
+  }
+
+  // 自動スライドの一時停止
+  function stopAutoSlide() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
+  // 指定インデックスのカードへスクロール
+  function scrollToIndex(index) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    const card = cards[index];
+    const gridStyle = window.getComputedStyle(grid);
+    const gap = parseInt(gridStyle.gap) || 16;
+    const paddingLeft = parseInt(gridStyle.paddingLeft) || 16;
+
+    // カードのオフセットからコンテナのパディングを引いた正確なスクロール位置を計算
+    const targetScrollLeft = card.offsetLeft - paddingLeft;
+
+    grid.scrollTo({
+      left: targetScrollLeft,
+      behavior: 'smooth'
+    });
+
+    // スムーズスクロール完了後にフラグを下ろす（おおむね500ms）
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 500);
+  }
+
+  // ユーザーのスクロール/スワイプ操作を検知して自動スライドをポーズ
+  let scrollTimeout;
+  grid.addEventListener('scroll', () => {
+    if (window.innerWidth > 992) return;
+
+    // スクロール検知中はタイマーをクリアして自動スライドを一時停止
+    stopAutoSlide();
+
+    // スクロールが終了した（＝150ms間スクロールイベントが来ない）タイミングでインデックスを検知して再開
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const gridStyle = window.getComputedStyle(grid);
+      const gap = parseInt(gridStyle.gap) || 16;
+      const paddingLeft = parseInt(gridStyle.paddingLeft) || 16;
+      
+      // スクロール完了位置から、一番近いカードのインデックスを計算
+      const scrollPos = grid.scrollLeft;
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, idx) => {
+        const targetPos = card.offsetLeft - paddingLeft;
+        const dist = Math.abs(scrollPos - targetPos);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIndex = idx;
+        }
+      });
+
+      currentIndex = closestIndex;
+      startAutoSlide(); // 自動スライドをリスタート
+    }, 150);
+  });
+
+  // 初期スライド自動実行を開始
+  startAutoSlide();
+
+  // PC ⇔ タブレット/スマホ間のサイズ切り替え時の監視
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992) {
+      stopAutoSlide();
+      grid.scrollTo({ left: 0 }); // PC版に戻ったらスクロールをリセット
+      currentIndex = 0;
+    } else {
+      if (!intervalId) {
+        startAutoSlide();
+      }
+    }
+  });
+}
+

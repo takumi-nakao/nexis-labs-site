@@ -1066,6 +1066,31 @@ textarea.form-input {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr); /* タブレット 2列 */
   }
+
+  /* 料金プランカルーセル表示（992px以下） */
+  .pricing-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: var(--space-md) !important;
+    padding: var(--space-md) var(--space-sm) !important;
+    scrollbar-width: none !important; /* Firefox */
+  }
+
+  .pricing-grid::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera */
+  }
+
+  .pricing-card {
+    flex: 0 0 85% !important; /* カード幅を85%にし、次のカードの端を少し見せる */
+    scroll-snap-align: center !important; /* 吸着位置を画面中央にする */
+    margin: 0 !important;
+    min-width: 280px !important;
+  }
 }
 
 @media (max-width: 768px) {
