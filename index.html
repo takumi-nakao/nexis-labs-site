@@ -868,6 +868,7 @@
           </button>
 
           <div class="pricing-grid">
+
             <!-- light plan -->
 
             <article class="pricing-card glass-panel gsap-fade-up">
@@ -938,76 +939,44 @@
                 >
               </div>
             </article>
-
-            <!-- premium plan -->
-
-            <article
-              class="pricing-card premium glass-panel gsap-fade-up"
-              style="border: 1px solid rgba(139, 92, 246, 0.25)"
-            >
-              <div class="pricing-header">
-                <h3
-                  class="pricing-name"
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      #fff,
-                      var(--accent-purple)
-                    );
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                  "
-                >
-                  プレミアムプラン
-                </h3>
-
-                <div class="pricing-price">90,000円〜<span>要相談</span></div>
-              </div>
-
-              <ul class="pricing-features">
-                <li>ハイエンドなフルカスタマイズデザイン</li>
-
-                <li>大規模サイト・複数ページ（要相談）</li>
-
-                <li>GSAPによる先進的で滑らかなアニメーション</li>
-
-                <li>Three.jsによる高品質な3D演出（必要に応じて）</li>
-
-                <li>多機能お問い合わせフォーム設置</li>
-
-                <li>Googleスピード満点チューニング</li>
-
-                <li>インフラ構築・Vercel配信サポート</li>
-
-                <li>納品後の更新保守サポート (1ヶ月無料)</li>
-              </ul>
-
-              <div class="pricing-footer">
-                <a
-                  href="#contact"
-                  class="btn btn-purple btn-shine"
-                  style="width: 100%"
-                  >このプランで相談する</a
-                >
-              </div>
-            </article>
-          </div>
-          <button
-            class="carousel-btn next-btn"
-            aria-label="次のプランへ"
-            onclick="this.blur()"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+        </div>
+          <button class="carousel-btn next-btn" aria-label="次のプランへ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
+        </div>
+        <!-- 別途お見積り・相談の別枠 (旧プレミアムプラン) -->
+        <div class="pricing-custom-box glass-panel gsap-fade-up">
+          <div class="pricing-custom-header">
+            <span class="custom-badge">PREMIUM CUSTOM</span>
+            <h3>プレミアム・フルカスタムプラン</h3>
+            <p class="custom-desc">
+              要件定義から完全オリジナルデザイン、GSAPやThree.jsによる先進的なアニメーション・3D演出、そして強固なセキュリティ設計まで、貴社のこだわりをすべて形にするハイエンドパッケージ。大規模サイトや複数ページ、多機能システムの実装にも対応します。
+            </p>
+            <div class="custom-price-tag">
+              <span class="price-label">目安料金</span>
+              <span class="price-value">90,000円〜</span>
+              <span class="price-sub">（個別お見積り / ご相談）</span>
+            </div>
+          </div>
+          
+          <div class="pricing-custom-details">
+            <ul class="pricing-features">
+              <li>ハイエンドなフルカスタマイズデザイン</li>
+              <li>大規模サイト・複数ページ（要相談）</li>
+              <li>GSAPによる先進的で滑らかなアニメーション</li>
+              <li>Three.jsによる高品質な3D演出（必要に応じて）</li>
+              <li>多機能お問い合わせフォームの設置</li>
+              <li>Googleスピード満点チューニング（表示速度高速化）</li>
+              <li>インフラ構築・Vercel配信・独自ドメインサポート</li>
+              <li>公開後の更新保守サポート（1ヶ月完全無料）</li>
+            </ul>
+            
+            <div class="custom-cta">
+              <a href="#contact" class="btn btn-purple btn-shine">このプランで相談・見積もりする</a>
+            </div>
+          </div>
         </div>
 
         <!-- Extra pricing details -->

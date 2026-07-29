@@ -1121,6 +1121,95 @@ textarea.form-input {
   transform: translateY(-50%) scale(0.95);
 }
 
+/* Premium Custom Consultation Box Styles */
+.pricing-custom-box {
+  margin-top: var(--space-lg);
+  padding: 2.25rem var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(139, 92, 246, 0.25) !important;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.08);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-lg);
+  text-align: left;
+  background: rgba(139, 92, 246, 0.015);
+  align-items: center;
+}
+
+.pricing-custom-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pricing-custom-header h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5rem 0 0 0;
+}
+
+.custom-badge {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--accent-purple);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: rgba(139, 92, 246, 0.04);
+  letter-spacing: 0.05em;
+}
+
+.custom-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.custom-price-tag {
+  margin-top: var(--space-xs);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.price-label {
+  font-size: 0.8rem;
+  color: var(--text-dark);
+}
+
+.price-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.price-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.pricing-custom-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.custom-cta {
+  margin-top: var(--space-xs);
+}
+
+.custom-cta .btn {
+  width: 100%;
+  padding: 0.95rem;
+  font-size: 1.05rem;
+}
+
+
 @media (max-width: 992px) {
   /* 共通のカルーセルレイアウト上書き（スマホ・タブレット） */
   .pricing-carousel-wrapper,
@@ -1225,6 +1314,22 @@ textarea.form-input {
     grid-template-columns: repeat(2, 1fr); /* タブレット 2列 */
   }
 
+
+  /* Premium Custom Box Responsive overrides */
+  .pricing-custom-box {
+    grid-template-columns: 1fr !important;
+    padding: var(--space-md) !important;
+    gap: var(--space-md) !important;
+    margin-top: var(--space-md) !important;
+  }
+
+  .pricing-custom-header h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .price-value {
+    font-size: 1.8rem !important;
+  }
 
 }
 
