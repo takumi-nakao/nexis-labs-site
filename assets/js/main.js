@@ -181,7 +181,7 @@ function renderProjects() {
           <span class="project-badge ${project.badgeClass}">${project.badge}</span>
         </div>
         <div class="project-details">
-          <h3 class="project-title">${project.title.replace(/[\s\u3000]+/g, '<br class="sp-only" />')}</h3>
+          <h3 class="project-title">${project.title}</h3>
           <p class="project-description">${project.description}</p>
           
           <div class="project-meta-info">

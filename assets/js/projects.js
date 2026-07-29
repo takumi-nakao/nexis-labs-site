@@ -12,7 +12,7 @@ const BASE_GITHUB_ORGANIZATION = "https://github.com/nexis-labs";
 const PROJECTS_DATA = [
   {
     id: "nexis-labs",
-    title: "NEXIS Labs 公式サイト",
+    title: "NEXIS Labs<br class=\"sp-only\" />公式サイト",
     badge: "Design Demo",
     badgeClass: "demo",
     description: "NEXIS Labs自身の公式サイト。最先端フロントエンド技術の証明として、滑らかな3D演出と一瞬で完了するロード画面、ライト・ダークのハイブリッド設計を実装。",
@@ -25,7 +25,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "astranova",
-    title: "ASTRANOVA 公式ポータル",
+    title: "ASTRANOVA<br class=\"sp-only\" />公式ポータル",
     badge: "Live Project",
     badgeClass: "live",
     description: "近未来・宇宙をテーマにしたeSportsチーム「ASTRANOVA」の公式ファンサイト。世界観を反映したダークネオンなデザインと、ファンを熱狂させる動的な戦績表示を実装。",
@@ -38,7 +38,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "bluewave-systems",
-    title: "BlueWave Systems サービスサイト",
+    title: "BlueWave Systems<br class=\"sp-only\" />サービスサイト",
     badge: "Design Demo",
     badgeClass: "demo",
     description: "SaaSスタートアップ企業向けのハイスピード製品紹介サイト。Stripe風の美しく滑らかな料金シミュレーターや、視線を誘導する高精度なグラデーション演出を実装。",
@@ -51,7 +51,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "cafe-lp",
-    title: "Cafe KOTOHOGI 特設LP",
+    title: "Cafe KOTOHOGI<br class=\"sp-only\" />特設LP",
     badge: "Design Demo",
     badgeClass: "demo",
     description: "高級自家焙煎ロースタリーのブランドサイト。Apple風の大きな余白を活かしたミニマルデザインで、厳選されたコーヒー豆のストーリーテリングを演出。",
@@ -64,7 +64,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "corporate-demo",
-    title: "NexTech コーポレートサイト",
+    title: "NexTech<br class=\"sp-only\" />コーポレートサイト",
     badge: "Design Demo",
     badgeClass: "demo",
     description: "次世代AIテクノロジー企業の公式ウェブサイト。Lighthouse評価でオール満点基準を満たす、極めて優れた表示速度、完璧なSEO、アクセシビリティ対応を徹底。",
@@ -77,7 +77,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "construction-demo",
-    title: "SATO 建築設計事務所",
+    title: "SATO<br class=\"sp-only\" />建築設計事務所",
     badge: "Design Demo",
     badgeClass: "demo",
     description: "和モダンと先進的デザインを融合させた建築設計事務所の実績ギャラリーサイト。施工例をダイナミックかつ軽量に映し出すフル画面ビューアを搭載。",
