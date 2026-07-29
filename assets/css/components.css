@@ -589,86 +589,26 @@
    ========================================================================== */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 4カラムがPCで綺麗に並ぶように幅調整 */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-lg);
   align-items: stretch;
 }
 
 .pricing-card {
-  padding: 1.75rem !important;
+  padding: 1.75rem !important; /* PCでもパディングを適度に狭め、高さを抑える */
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  min-height: 480px;
-  border: 1px solid rgba(255, 255, 255, 0.06); /* 基本ボーダー */
-  background: var(--glass-bg-card);
-  transition: border var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
-}
-
-[data-theme="light"] .pricing-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.pricing-card:hover {
-  transform: translateY(-4px);
-}
-
-/* 脈動ネオンボーダーアニメーション (一番人気を強調) */
-@keyframes recommended-neon-pulse {
-  0% {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15), inset 0 0 5px rgba(6, 182, 212, 0.05);
-    border-color: rgba(6, 182, 212, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(6, 182, 212, 0.35), inset 0 0 15px rgba(6, 182, 212, 0.15);
-    border-color: rgba(6, 182, 212, 0.6);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15), inset 0 0 5px rgba(6, 182, 212, 0.05);
-    border-color: rgba(6, 182, 212, 0.25);
-  }
+  min-height: 480px; /* カード間の高さをある程度均等に保ちつつコンパクト化 */
 }
 
 .pricing-card.recommended {
-  border: 1px solid rgba(6, 182, 212, 0.3) !important;
-  animation: recommended-neon-pulse 3s infinite ease-in-out;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.06) 0%, rgba(37, 99, 235, 0.02) 100%) !important;
-}
-
-[data-theme="light"] .pricing-card.recommended {
-  background: linear-gradient(135deg, rgba(8, 145, 178, 0.04) 0%, rgba(29, 78, 216, 0.01) 100%) !important;
-  border-color: rgba(8, 145, 178, 0.4) !important;
-  animation: none; /* ライトモード時はチカチカさせず静かに強調 */
-  box-shadow: 0 10px 30px rgba(8, 145, 178, 0.08);
-}
-
-/* プレミアムプラン (パープル調) */
-.pricing-card.premium {
-  border: 1px solid rgba(139, 92, 246, 0.25) !important;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.04) 0%, rgba(6, 9, 19, 0.4) 100%) !important;
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.08);
-}
-
-[data-theme="light"] .pricing-card.premium {
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.03) 0%, #ffffff 100%) !important;
-  border-color: rgba(124, 58, 237, 0.25) !important;
-}
-
-/* 個別見積り・ご相談 (シアン・エメラルド調) */
-.pricing-card.quote-consultation-card {
-  border: 1px solid rgba(6, 182, 212, 0.22) !important;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, rgba(6, 9, 19, 0.4) 100%) !important;
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.06);
-}
-
-[data-theme="light"] .pricing-card.quote-consultation-card {
-  background: linear-gradient(135deg, rgba(8, 145, 178, 0.02) 0%, #ffffff 100%) !important;
-  border-color: rgba(8, 145, 178, 0.2) !important;
+  border: var(--border-glow-active);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.15);
 }
 
 .pricing-card.recommended::after {
@@ -682,7 +622,7 @@
   font-weight: 800;
   padding: 0.25rem 2rem;
   transform: rotate(45deg);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 
 .pricing-header {
@@ -986,21 +926,20 @@
 }
 
 .form-input {
-  background: rgba(10, 14, 25, 0.35); /* より落ち着いた背景 */
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-glow);
   border-radius: var(--radius-sm);
   padding: 0.85rem 1rem;
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  transition: border var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border var(--transition-fast), background var(--transition-fast);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: var(--accent-cyan) !important;
-  background: rgba(20, 27, 47, 0.6);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.12); /* フォーカス時に上品なネオンリング */
+  border-color: var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 textarea.form-input {
@@ -1419,22 +1358,16 @@ textarea.form-input {
 .pain-box {
   text-align: left;
   padding: var(--space-lg);
-  background: rgba(10, 14, 25, 0.45); /* よりディープなネイビー背景 */
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: var(--border-glow);
   border-radius: var(--radius-lg);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="light"] .pain-box {
-  background: #f8fafc;
-  border: 1px solid rgba(15, 23, 42, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.03);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
 }
 
 .pain-list {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem; /* ゆったりとした縦間隔 */
+  gap: var(--space-md);
 }
 
 .pain-item {
@@ -1442,16 +1375,15 @@ textarea.form-input {
   align-items: flex-start;
   gap: var(--space-sm);
   font-size: 0.95rem;
-  color: var(--text-muted); /* 可読性を向上 */
-  line-height: 1.6;
+  color: var(--text-dark);
+  line-height: 1.5;
 }
 
 .pain-icon {
-  color: #f87171; /* マイルドで上品なレッド */
+  color: #ef4444;
   font-weight: bold;
   flex-shrink: 0;
-  font-size: 1.15rem;
-  margin-top: 1px;
+  font-size: 1.1rem;
 }
 
 .solution-box {
@@ -1460,25 +1392,19 @@ textarea.form-input {
   text-align: left;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(6, 182, 212, 0.35) !important; /* シアンの上品なネオン線 */
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.09) 0%, rgba(139, 92, 246, 0.05) 100%);
-  box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.1), inset 0 0 15px rgba(6, 182, 212, 0.05);
+  border: var(--border-glow-active);
+  background: radial-gradient(circle at 0% 0%, rgba(6, 182, 212, 0.08) 0%, rgba(139, 92, 246, 0.04) 100%);
+  box-shadow: 0 15px 35px -15px rgba(6, 182, 212, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-[data-theme="light"] .solution-box {
-  background: linear-gradient(135deg, rgba(8, 145, 178, 0.04) 0%, rgba(124, 58, 237, 0.02) 100%);
-  border: 1px solid rgba(8, 145, 178, 0.25) !important;
-  box-shadow: 0 15px 35px -15px rgba(8, 145, 178, 0.08);
 }
 
 .solution-tag {
   color: var(--accent-cyan);
   font-weight: 700;
   font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   margin-bottom: var(--space-xs);
 }
 
@@ -1486,8 +1412,8 @@ textarea.form-input {
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: var(--space-sm);
-  line-height: 1.35;
-  color: var(--text-primary); /* 可読性を最大化 (白/黒) */
+  line-height: 1.3;
+  color: var(--text-dark);
 }
 
 .solution-desc {
@@ -1597,8 +1523,7 @@ textarea.form-input {
 
 [data-theme="light"] .form-input:focus {
   background: rgba(255, 255, 255, 1);
-  border-color: var(--accent-cyan) !important;
-  box-shadow: 0 0 12px rgba(8, 145, 178, 0.12);
+  border-color: var(--accent-cyan);
 }
 
 [data-theme="light"] .faq-trigger:hover {
