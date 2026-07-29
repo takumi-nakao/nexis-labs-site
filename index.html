@@ -775,7 +775,15 @@
           小規模なランディングページから、先進的なインタラクションを導入したプレミアム構成まで、納得感のある3つの目安プランです。
         </p>
 
-        <div class="pricing-grid">
+        <div class="pricing-carousel-wrapper">
+          <!-- 左右の矢印ボタン (スマホ/タブレット表示時のみ表示) -->
+          <button class="carousel-btn prev-btn" aria-label="前のプランへ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <div class="pricing-grid">
           <!-- light plan -->
 
           <article class="pricing-card glass-panel gsap-fade-up">
@@ -899,6 +907,12 @@
               >
             </div>
           </article>
+        </div>
+          <button class="carousel-btn next-btn" aria-label="次のプランへ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
 
         <!-- Extra pricing details -->

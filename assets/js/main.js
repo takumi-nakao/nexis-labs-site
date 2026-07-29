@@ -507,6 +507,34 @@ function initPricingCarousel() {
     observer.observe(grid);
   }
 
+  // 左右矢印ボタンのクリックイベントを設定
+  const prevBtn = document.querySelector('.pricing-carousel-wrapper .prev-btn');
+  const nextBtn = document.querySelector('.pricing-carousel-wrapper .next-btn');
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      // ボタン操作時は自動スライドタイマーを一時停止
+      stopAutoSlide();
+      
+      // indexを1つ戻す (ループ対応)
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      scrollToIndex(currentIndex);
+      
+      // 操作完了後に自動スライドをリスタート
+      startAutoSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      stopAutoSlide();
+      
+      // indexを1つ進める (ループ対応)
+      currentIndex = (currentIndex + 1) % cards.length;
+      scrollToIndex(currentIndex);
+      
+      startAutoSlide();
+    });
+  }
+
   // PC ⇔ タブレット/スマホ間のサイズ切り替え時の監視
   window.addEventListener('resize', () => {
     if (window.innerWidth > 992) {
