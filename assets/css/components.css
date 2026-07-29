@@ -596,13 +596,14 @@
 }
 
 .pricing-card {
-  padding: var(--space-lg);
+  padding: 1.75rem !important; /* PCでもパディングを適度に狭め、高さを抑える */
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  min-height: 480px; /* カード間の高さをある程度均等に保ちつつコンパクト化 */
 }
 
 .pricing-card.recommended {
@@ -647,24 +648,28 @@
 }
 
 .pricing-features {
-  margin: var(--space-md) 0;
+  margin: var(--space-sm) 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.6rem;
   flex-grow: 1;
 }
 
 .pricing-features li {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* テキストが2行に折り返されても上端でチェックマークと揃える */
   gap: var(--space-xs);
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* テキストサイズをわずかにコンパクトにして収まりを改善 */
+  line-height: 1.45;
   color: var(--text-muted);
+  text-align: left;
 }
 
 .pricing-features li::before {
   content: '✓';
   color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 2px; /* 1行目の文字の高さに綺麗に揃える */
 }
 
 .pricing-card.recommended .pricing-features li::before {
@@ -1172,6 +1177,21 @@ textarea.form-input {
     scroll-snap-align: center !important;
     margin: 0 !important;
     min-width: 280px !important;
+  }
+
+  /* 料金プランモバイル専用調整（高さを詰め、表示幅不足による縦伸びを防止） */
+  .pricing-card {
+    padding: 1.25rem 1.15rem !important; /* 左右・上下のパディングを大幅に最適化 */
+    min-height: 410px !important; /* 縦長になりすぎないようコンパクトに抑制 */
+  }
+
+  .pricing-features {
+    margin: var(--space-xs) 0 !important;
+    gap: 0.45rem !important;
+  }
+
+  .pricing-features li {
+    font-size: 0.82rem !important;
   }
 
   /* コンテナ余白・グリッド枠の最適化 (タブレット) */

@@ -429,79 +429,103 @@
         </p>
 
         <div class="branch-carousel-wrapper">
-          <button class="carousel-btn prev-btn" aria-label="前のサービスへ" onclick="this.blur();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button
+            class="carousel-btn prev-btn"
+            aria-label="前のサービスへ"
+            onclick="this.blur()"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          
+
           <div class="branch-grid">
-          <!-- esports card -->
+            <!-- esports card -->
 
-          <article class="branch-card esports-gateway glass-panel gsap-fade-up">
-            <div>
-              <div class="branch-icon">🎮</div>
-
-              <h3>eSportsチーム向け Webサイト</h3>
-
-              <p>
-                熱狂を可視化し、チームの格を高めることで、ファンコミュニティ活性化とスポンサー獲得を強力に推進します。
-              </p>
-
-              <ul class="branch-features">
-                <li>スポンサーアピールに特化したCTA設計</li>
-
-                <li>大会戦績・獲得タイトルの動的ギャラリー</li>
-
-                <li>所属選手・ストリーマーの魅力的紹介</li>
-
-                <li>SNS・配信状況（Twitch等）のリアルタイム連携</li>
-              </ul>
-            </div>
-
-            <a
-              href="esports.html"
-              class="btn btn-cyan btn-shine"
-              style="width: 100%"
-              >eSports専用ページへ →</a
+            <article
+              class="branch-card esports-gateway glass-panel gsap-fade-up"
             >
-          </article>
+              <div>
+                <div class="branch-icon">🎮</div>
 
-          <!-- corporate card -->
+                <h3>eSportsチーム向け Webサイト</h3>
 
-          <article
-            class="branch-card corporate-gateway glass-panel gsap-fade-up"
+                <p>
+                  熱狂を可視化し、チームの格を高めることで、ファンコミュニティ活性化とスポンサー獲得を強力に推進します。
+                </p>
+
+                <ul class="branch-features">
+                  <li>スポンサーアピールに特化したCTA設計</li>
+
+                  <li>大会戦績・獲得タイトルの動的ギャラリー</li>
+
+                  <li>所属選手・ストリーマーの魅力的紹介</li>
+
+                  <li>SNS・配信状況（Twitch等）のリアルタイム連携</li>
+                </ul>
+              </div>
+
+              <a
+                href="esports.html"
+                class="btn btn-cyan btn-shine"
+                style="width: 100%"
+                >eSports専用ページへ →</a
+              >
+            </article>
+
+            <!-- corporate card -->
+
+            <article
+              class="branch-card corporate-gateway glass-panel gsap-fade-up"
+            >
+              <div>
+                <div class="branch-icon">🏢</div>
+
+                <h3>企業・スタートアップ向け Webサイト</h3>
+
+                <p>
+                  信頼性と知的なデザインを軸にし、見込み顧客からのお問い合わせ（CV）や優秀な人材の採用を最大化する営業サイト。
+                </p>
+
+                <ul class="branch-features">
+                  <li>信頼性を最重視した洗練された余白設計</li>
+
+                  <li>お問い合わせ（CVR）を高める導線・心理設計</li>
+
+                  <li>企業価値を的確に伝える情報アーキテクチャ</li>
+
+                  <li>Google評価に準拠した表示スピードとSEO</li>
+                </ul>
+              </div>
+
+              <a
+                href="corporate.html"
+                class="btn btn-purple btn-shine"
+                style="width: 100%"
+                >企業向け専用ページへ →</a
+              >
+            </article>
+          </div>
+          <button
+            class="carousel-btn next-btn"
+            aria-label="次のサービスへ"
+            onclick="this.blur()"
           >
-            <div>
-              <div class="branch-icon">🏢</div>
-
-              <h3>企業・スタートアップ向け Webサイト</h3>
-
-              <p>
-                信頼性と知的なデザインを軸にし、見込み顧客からのお問い合わせ（CV）や優秀な人材の採用を最大化する営業サイト。
-              </p>
-
-              <ul class="branch-features">
-                <li>信頼性を最重視した洗練された余白設計</li>
-
-                <li>お問い合わせ（CVR）を高める導線・心理設計</li>
-
-                <li>企業価値を的確に伝える情報アーキテクチャ</li>
-
-                <li>Google評価に準拠した表示スピードとSEO</li>
-              </ul>
-            </div>
-
-            <a
-              href="corporate.html"
-              class="btn btn-purple btn-shine"
-              style="width: 100%"
-              >企業向け専用ページへ →</a
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-          </article>
-        </div>
-          <button class="carousel-btn next-btn" aria-label="次のサービスへ" onclick="this.blur();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
@@ -554,16 +578,38 @@
         <!-- Dynamic projects populated by assets/js/projects.js -->
 
         <div class="projects-carousel-wrapper">
-          <button class="carousel-btn prev-btn" aria-label="前の実績へ" onclick="this.blur();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button
+            class="carousel-btn prev-btn"
+            aria-label="前の実績へ"
+            onclick="this.blur()"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          
+
           <div id="projects-container" class="projects-grid"></div>
 
-          <button class="carousel-btn next-btn" aria-label="次の実績へ" onclick="this.blur();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button
+            class="carousel-btn next-btn"
+            aria-label="次の実績へ"
+            onclick="this.blur()"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
@@ -804,139 +850,161 @@
 
         <div class="pricing-carousel-wrapper">
           <!-- 左右の矢印ボタン (スマホ/タブレット表示時のみ表示) -->
-          <button class="carousel-btn prev-btn" aria-label="前のプランへ" onclick="this.blur();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button
+            class="carousel-btn prev-btn"
+            aria-label="前のプランへ"
+            onclick="this.blur()"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          
+
           <div class="pricing-grid">
-          <!-- light plan -->
+            <!-- light plan -->
 
-          <article class="pricing-card glass-panel gsap-fade-up">
-            <div class="pricing-header">
-              <h3 class="pricing-name">ライトプラン</h3>
+            <article class="pricing-card glass-panel gsap-fade-up">
+              <div class="pricing-header">
+                <h3 class="pricing-name">ライトプラン</h3>
 
-              <div class="pricing-price">
-                30,000円〜<span>50,000円 (目安)</span>
+                <div class="pricing-price">
+                  30,000円〜<span>50,000円 (目安)</span>
+                </div>
               </div>
-            </div>
 
-            <ul class="pricing-features">
-              <li>ランディングページ (LP) 制作</li>
+              <ul class="pricing-features">
+                <li>ランディングページ (LP) 制作</li>
 
-              <li>3ページ程度までの小規模な構成</li>
+                <li>3ページ程度までの小規模な構成</li>
 
-              <li>完全スマートフォン対応</li>
+                <li>完全スマートフォン対応</li>
 
-              <li>お問い合わせフォーム設置</li>
+                <li>お問い合わせフォーム設置</li>
 
-              <li>基本SEO内部対策</li>
+                <li>基本SEO内部対策</li>
 
-              <li>公開・サーバー導入サポート</li>
-            </ul>
+                <li>公開・サーバー導入サポート</li>
+              </ul>
 
-            <div class="pricing-footer">
-              <a href="#contact" class="btn btn-secondary" style="width: 100%"
-                >このプランで相談する</a
-              >
-            </div>
-          </article>
-
-          <!-- standard plan (popular) -->
-
-          <article class="pricing-card recommended glass-panel gsap-fade-up">
-            <div class="pricing-header">
-              <h3 class="pricing-name">スタンダードプラン</h3>
-
-              <div class="pricing-price">
-                55,000円〜<span>80,000円 (目安)</span>
+              <div class="pricing-footer">
+                <a href="#contact" class="btn btn-secondary" style="width: 100%"
+                  >このプランで相談する</a
+                >
               </div>
-            </div>
+            </article>
 
-            <ul class="pricing-features">
-              <li>コーポレートサイト / eSportsチームサイト向け</li>
+            <!-- standard plan (popular) -->
 
-              <li>5〜8ページ程度の適切な情報設計</li>
+            <article class="pricing-card recommended glass-panel gsap-fade-up">
+              <div class="pricing-header">
+                <h3 class="pricing-name">スタンダードプラン</h3>
 
-              <li>オリジナルデザイン設計 (テンプレート不使用)</li>
+                <div class="pricing-price">
+                  55,000円〜<span>80,000円 (目安)</span>
+                </div>
+              </div>
 
-              <li>完全スマートフォン対応</li>
+              <ul class="pricing-features">
+                <li>コーポレートサイト / eSportsチームサイト向け</li>
 
-              <li>お問い合わせフォーム設置</li>
+                <li>5〜8ページ程度の適切な情報設計</li>
 
-              <li>GSAPスクロール連動アニメーション</li>
+                <li>オリジナルデザイン設計 (テンプレート不使用)</li>
 
-              <li>徹底したSEO内部対策</li>
+                <li>完全スマートフォン対応</li>
 
-              <li>サーバー接続・公開サポート</li>
-            </ul>
+                <li>お問い合わせフォーム設置</li>
 
-            <div class="pricing-footer">
-              <a
-                href="#contact"
-                class="btn btn-cyan btn-shine"
-                style="width: 100%"
-                >このプランで相談する</a
-              >
-            </div>
-          </article>
+                <li>GSAPスクロール連動アニメーション</li>
 
-          <!-- premium plan -->
+                <li>徹底したSEO内部対策</li>
 
-          <article
-            class="pricing-card premium glass-panel gsap-fade-up"
-            style="border: 1px solid rgba(139, 92, 246, 0.25)"
+                <li>サーバー接続・公開サポート</li>
+              </ul>
+
+              <div class="pricing-footer">
+                <a
+                  href="#contact"
+                  class="btn btn-cyan btn-shine"
+                  style="width: 100%"
+                  >このプランで相談する</a
+                >
+              </div>
+            </article>
+
+            <!-- premium plan -->
+
+            <article
+              class="pricing-card premium glass-panel gsap-fade-up"
+              style="border: 1px solid rgba(139, 92, 246, 0.25)"
+            >
+              <div class="pricing-header">
+                <h3
+                  class="pricing-name"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #fff,
+                      var(--accent-purple)
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                  "
+                >
+                  プレミアムプラン
+                </h3>
+
+                <div class="pricing-price">90,000円〜<span>要相談</span></div>
+              </div>
+
+              <ul class="pricing-features">
+                <li>ハイエンドなフルカスタマイズデザイン</li>
+
+                <li>大規模サイト・複数ページ（要相談）</li>
+
+                <li>GSAPによる先進的で滑らかなアニメーション</li>
+
+                <li>Three.jsによる高品質な3D演出（必要に応じて）</li>
+
+                <li>多機能お問い合わせフォーム設置</li>
+
+                <li>Googleスピード満点チューニング</li>
+
+                <li>インフラ構築・Vercel配信サポート</li>
+
+                <li>納品後の更新保守サポート (1ヶ月無料)</li>
+              </ul>
+
+              <div class="pricing-footer">
+                <a
+                  href="#contact"
+                  class="btn btn-purple btn-shine"
+                  style="width: 100%"
+                  >このプランで相談する</a
+                >
+              </div>
+            </article>
+          </div>
+          <button
+            class="carousel-btn next-btn"
+            aria-label="次のプランへ"
+            onclick="this.blur()"
           >
-            <div class="pricing-header">
-              <h3
-                class="pricing-name"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    #fff,
-                    var(--accent-purple)
-                  );
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                "
-              >
-                プレミアムプラン
-              </h3>
-
-              <div class="pricing-price">90,000円〜<span>要相談</span></div>
-            </div>
-
-            <ul class="pricing-features">
-              <li>ハイエンドなフルカスタマイズデザイン</li>
-
-              <li>大規模サイト・複数ページ（要相談）</li>
-
-              <li>GSAPによる先進的で滑らかなアニメーション</li>
-
-              <li>Three.jsによる高品質な3D演出（必要に応じて）</li>
-
-              <li>多機能お問い合わせフォーム設置</li>
-
-              <li>Googleスピード満点チューニング</li>
-
-              <li>インフラ構築・Vercel配信サポート</li>
-
-              <li>納品後の更新保守サポート (1ヶ月無料)</li>
-            </ul>
-
-            <div class="pricing-footer">
-              <a
-                href="#contact"
-                class="btn btn-purple btn-shine"
-                style="width: 100%"
-                >このプランで相談する</a
-              >
-            </div>
-          </article>
-        </div>
-          <button class="carousel-btn next-btn" aria-label="次のプランへ" onclick="this.blur();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
