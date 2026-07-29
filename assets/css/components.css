@@ -1101,6 +1101,20 @@ textarea.form-input {
 }
 
 @media (max-width: 992px) {
+  /* コンテナ余白・グリッド枠の最適化 (タブレット) */
+  .container {
+    padding: 0 var(--space-sm) !important;
+  }
+
+  .security-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 強みやセキュリティを2列表示 */
+    gap: var(--space-sm) !important;
+  }
+
+  .branch-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   .timeline::before {
     left: var(--space-sm);
   }
@@ -1160,6 +1174,30 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+  /* コンテナ余白・セクション間隔の最適化 (スマホ) */
+  .container {
+    padding: 0 16px !important;
+  }
+
+  .section-padding {
+    padding: var(--space-lg) 0 !important; /* スマホ向けに上下の巨大な余白を縮小 */
+  }
+
+  /* グリッド枠の最適化（スマホは1列にして窮屈感を解消） */
+  .security-grid {
+    grid-template-columns: 1fr !important; /* 強みやセキュリティを1列にして可読性を最大化 */
+    gap: var(--space-md) !important;
+  }
+
+  .branch-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* カード内余白の最適化（文字の細切れ改行を防ぐ） */
+  .security-card {
+    padding: var(--space-md) !important; /* パディングを適度に縮小して文字領域を広げる */
+  }
+
   .nav-links {
     display: none; /* Mobile menu toggled via JS */
   }
