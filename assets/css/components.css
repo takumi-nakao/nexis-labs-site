@@ -1241,6 +1241,20 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+  /* スマホ・タブレット時の文字領域最大化（極細カード余白設定） */
+  .pricing-card,
+  .branch-card,
+  .security-card,
+  .project-card,
+  .pain-box,
+  .solution-box {
+    padding: 1.25rem 1rem !important; /* 内側パディングを約20px/16pxに縮小し文字有効幅を広げる */
+  }
+
+  .timeline-content {
+    padding: 1rem !important;
+  }
+
   /* スマホ用料金プラン表示幅最適化 (カード幅を85%にし、フォントを小さく) */
   .pricing-carousel-wrapper {
     padding: 0 20px !important;
@@ -1553,6 +1567,20 @@ textarea.form-input {
 
 [data-theme="light"] .pricing-extra-group {
   background: rgba(9, 9, 11, 0.02);
+}
+
+/* ==========================================================================
+   RESPONSIVE TYPOGRAPHY UTILITIES
+   ========================================================================== */
+.u-inline {
+  display: inline-block !important;
+  white-space: normal !important;
+}
+
+@media (max-width: 768px) {
+  .pc-only {
+    display: none !important;
+  }
 }
 
 
