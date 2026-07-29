@@ -476,8 +476,36 @@ function initPricingCarousel() {
     }, 150);
   });
 
-  // 初期スライド自動実行を開始
-  startAutoSlide();
+  let isPricingVisible = false;
+
+  // IntersectionObserverによる画面内進入検知のセットアップ
+  const observerOptions = {
+    root: null, // ビューポート（画面）全体を基準にする
+    threshold: 0.15 // 料金プランセクションが画面内に15%以上入ったら検知
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isPricingVisible = true;
+        // 画面内に入り、かつスマホ/タブレット表示の場合のみ自動スクロールを開始
+        if (window.innerWidth <= 992) {
+          startAutoSlide();
+        }
+      } else {
+        isPricingVisible = false;
+        stopAutoSlide(); // 画面外に外れたら自動スクロールを完全停止（リソース保護）
+      }
+    });
+  }, observerOptions);
+
+  // 料金セクション全体を監視対象にする
+  const pricingSection = document.getElementById('pricing');
+  if (pricingSection) {
+    observer.observe(pricingSection);
+  } else {
+    observer.observe(grid);
+  }
 
   // PC ⇔ タブレット/スマホ間のサイズ切り替え時の監視
   window.addEventListener('resize', () => {
@@ -486,7 +514,8 @@ function initPricingCarousel() {
       grid.scrollTo({ left: 0 }); // PC版に戻ったらスクロールをリセット
       currentIndex = 0;
     } else {
-      if (!intervalId) {
+      // スマホサイズに変わり、かつ料金表が画面内に見えている時のみ自動スライドを再開
+      if (isPricingVisible && !intervalId) {
         startAutoSlide();
       }
     }
