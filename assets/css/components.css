@@ -1241,6 +1241,13 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+  /* お悩みタイトルをスマホでも確実に1行でちぢめて見せる */
+  #pain-points h2 {
+    font-size: 1.32rem !important;
+    white-space: nowrap !important;
+    letter-spacing: -0.02em !important;
+  }
+
   /* スマホ・タブレット時の文字領域最大化（極細カード余白設定） */
   .pricing-card,
   .branch-card,
