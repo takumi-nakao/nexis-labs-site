@@ -34,8 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initContactForm();
   initScrollAnimations();
-  initGenericCarousel('.pricing-carousel-wrapper', '.pricing-grid', '.pricing-card', 3500);
-  initGenericCarousel('.branch-carousel-wrapper', '.branch-grid', '.branch-card', 3500);
+  // 料金プランはスマホのみカルーセル化（breakpoint = 768）、タブレットは2列グリッド表示
+  initGenericCarousel('.pricing-carousel-wrapper', '.pricing-grid', '.pricing-card', 3500, 768);
+  
+  // サービスゲートウェイはタブレット・スマホ両方でカルーセル化
+  initGenericCarousel('.branch-carousel-wrapper', '.branch-grid', '.branch-card', 3500, 992);
 });
 
 // 全てのリソースが読み込まれ、高さが確定した時点で位置計算をリフレッシュ
@@ -202,7 +205,7 @@ function renderProjects() {
   }).join('');
 
   // 実績描画完了後にカルーセルを初期化
-  initGenericCarousel('.projects-carousel-wrapper', '.projects-grid', '.project-card', 3500);
+  initGenericCarousel('.projects-carousel-wrapper', '.projects-grid', '.project-card', 3500, 992);
 }
 
 /* ==========================================================================
@@ -392,7 +395,7 @@ function initContactForm() {
  * 汎用カルーセル制御関数（料金、ターゲット、制作実績）
  * タブレット・スマホ（992px以下）での自動スライド、手動スワイプ、左右矢印ボタンを制御します。
  */
-function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, intervalMs = 3500) {
+function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, intervalMs = 3500, breakpoint = 992) {
   const wrapper = document.querySelector(wrapperSelector);
   if (!wrapper) return;
   const grid = wrapper.querySelector(gridSelector);
@@ -408,7 +411,7 @@ function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, interv
   function startAutoSlide() {
     stopAutoSlide();
     intervalId = setInterval(() => {
-      if (window.innerWidth > 992) return;
+      if (window.innerWidth > breakpoint) return;
       const currentCards = wrapper.querySelectorAll(cardSelector);
       currentIndex = (currentIndex + 1) % currentCards.length;
       scrollToIndex(currentIndex);
@@ -451,7 +454,7 @@ function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, interv
   // 手動操作のバッティング制御
   let scrollTimeout;
   grid.addEventListener('scroll', () => {
-    if (window.innerWidth > 992) return;
+    if (window.innerWidth > breakpoint) return;
     stopAutoSlide();
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
@@ -482,7 +485,7 @@ function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, interv
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         isVisible = true;
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= breakpoint) {
           startAutoSlide();
         }
       } else {
@@ -518,7 +521,7 @@ function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, interv
 
   // 画面リサイズ監視
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 992) {
+    if (window.innerWidth > breakpoint) {
       stopAutoSlide();
       grid.scrollTo({ left: 0 });
       currentIndex = 0;
