@@ -4,28 +4,28 @@
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
-  /* Colors (Default Dark Theme) */
-  --bg-absolute: #09090b; /* hsl(240, 10%, 3.9%) */
-  --bg-deep: #0e0e11; /* hsl(240, 10%, 6%) */
-  --bg-card: #18181b; /* hsl(240, 5%, 9.8%) */
+  /* Colors (Default Dark Theme - Deep Premium Navy) */
+  --bg-absolute: #060913; /* 深みのある紺ベースの背景に変更 */
+  --bg-deep: #0c101d; /* セクション分け用のやや明るいネイビー */
+  --bg-card: rgba(20, 27, 47, 0.4); /* 立体感がありガラスモーフが綺麗にのるベース */
   --text-primary: #ffffff;
-  --text-muted: #a1a1aa; /* hsl(240, 5%, 64.9%) */
-  --text-dark: #71717a; /* hsl(240, 5%, 46.1%) */
+  --text-muted: #94a3b8; /* テキストコントラスト向上のため明るいslateグレーに変更 */
+  --text-dark: #64748b;
 
   /* Brand Accents */
-  --accent-blue: #2563eb; /* hsl(221.2, 83.2%, 53.3%) */
-  --accent-cyan: #06b6d4; /* hsl(189.2, 93.7%, 47.5%) */
-  --accent-purple: #8b5cf6; /* hsl(258.1, 90.2%, 66.5%) */
+  --accent-blue: #2563eb;
+  --accent-cyan: #06b6d4;
+  --accent-purple: #8b5cf6;
   --accent-glow: radial-gradient(
     circle,
-    rgba(6, 182, 212, 0.15) 0%,
-    rgba(139, 92, 246, 0.15) 50%,
+    rgba(6, 182, 212, 0.12) 0%,
+    rgba(139, 92, 246, 0.12) 50%,
     rgba(0, 0, 0, 0) 100%
   );
 
-  /* Typography */
+  /* Typography (Noto Sans JP + Plus Jakarta Sans) */
   --font-sans:
-    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Plus Jakarta Sans", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   --font-mono: "Geist Mono", "Fira Code", "Courier New", Courier, monospace;
 
@@ -37,7 +37,7 @@
   --space-xl: 6rem; /* 96px */
   --space-xxl: 10rem; /* 160px */
 
-  /* Borders & Blur */
+  /* Borders & Blur (Ultra-fine sleek borders) */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -45,8 +45,8 @@
   --border-glow: 1px solid rgba(255, 255, 255, 0.08);
   --border-glow-active: 1px solid rgba(6, 182, 212, 0.4);
   --glass-blur: blur(16px);
-  --glass-bg: rgba(9, 9, 11, 0.6);
-  --glass-bg-card: rgba(24, 24, 27, 0.4);
+  --glass-bg: rgba(6, 9, 19, 0.7);
+  --glass-bg-card: rgba(20, 27, 47, 0.35);
 
   /* Animation Speeds */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -60,16 +60,16 @@
 /* Light Theme Overrides */
 [data-theme="light"] {
   --bg-absolute: #ffffff;
-  --bg-deep: #f4f4f5; /* light gray background */
-  --bg-card: #ffffff;
-  --text-primary: #09090b;
-  --text-muted: #4b5563; /* dark gray for high readability */
-  --text-dark: #6b7280;
+  --bg-deep: #f8fafc; /* slate-50 を用いた非常に上品な白系グラデーション */
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --text-primary: #0f172a; /* slate-900 で高級感のある黒 */
+  --text-muted: #475569; /* slate-600 */
+  --text-dark: #64748b;
 
-  --border-glow: 1px solid rgba(9, 9, 11, 0.06);
+  --border-glow: 1px solid rgba(15, 23, 42, 0.06);
   --border-glow-active: 1px solid rgba(6, 182, 212, 0.5);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-card: rgba(255, 255, 255, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg-card: rgba(255, 255, 255, 0.6);
 
   /* Higher contrast branding colors for white background */
   --accent-blue: #1d4ed8;
@@ -77,10 +77,9 @@
   --accent-purple: #7c3aed;
   --accent-glow: radial-gradient(
     circle,
-    rgba(8, 145, 178, 0.08) 0%,
-    rgba(124, 58, 237, 0.08) 50%,
+    rgba(8, 145, 178, 0.06) 0%,
+    rgba(124, 58, 237, 0.06) 50%,
     rgba(255, 255, 255, 0) 100%
-  );
 }
 
 /* ==========================================================================
@@ -107,7 +106,8 @@ html {
 
 body {
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.75;
+  letter-spacing: 0.015em;
   overflow-x: hidden;
   position: relative;
 }
@@ -131,8 +131,8 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
 }
 
 h1 {
@@ -158,8 +158,10 @@ h3 {
 
 p {
   color: var(--text-muted);
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
 }
 
 a {
@@ -242,8 +244,13 @@ ol {
 }
 
 .glass-panel:hover {
-  border: rgba(255, 255, 255, 0.15) 1px solid;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(6, 182, 212, 0.05);
+}
+
+[data-theme="light"] .glass-panel:hover {
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
 }
 
 /* Scroll lock for loading screen */
@@ -258,4 +265,26 @@ ol {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* セクション背景の交互トーン切り替え（立体的なリズム感の創出） */
+section:nth-of-type(odd) {
+  background-color: var(--bg-absolute) !important;
+}
+
+section:nth-of-type(even) {
+  background-color: var(--bg-deep) !important;
+}
+
+/* 特定セクションのカラーセグメント調整 */
+#contact {
+  background-color: var(--bg-deep) !important;
+}
+
+#faq {
+  background-color: var(--bg-absolute) !important;
+}
+
+#workflow {
+  background-color: var(--bg-deep) !important;
 }
