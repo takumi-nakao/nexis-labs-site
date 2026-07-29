@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initContactForm();
   initScrollAnimations();
-  initPricingCarousel();
+  initGenericCarousel('.pricing-carousel-wrapper', '.pricing-grid', '.pricing-card', 3500);
+  initGenericCarousel('.branch-carousel-wrapper', '.branch-grid', '.branch-card', 3500);
 });
 
 // 全てのリソースが読み込まれ、高さが確定した時点で位置計算をリフレッシュ
@@ -199,6 +200,9 @@ function renderProjects() {
       </div>
     `;
   }).join('');
+
+  // 実績描画完了後にカルーセルを初期化
+  initGenericCarousel('.projects-carousel-wrapper', '.projects-grid', '.project-card', 3500);
 }
 
 /* ==========================================================================
@@ -385,32 +389,33 @@ function initContactForm() {
 }
 
 /**
- * 料金プランカルーセルの制御（タブレット・スマホ対応）
- * 3.5秒ごとに自動スクロールし、ユーザー操作時にはタイマーをポーズします。
+ * 汎用カルーセル制御関数（料金、ターゲット、制作実績）
+ * タブレット・スマホ（992px以下）での自動スライド、手動スワイプ、左右矢印ボタンを制御します。
  */
-function initPricingCarousel() {
-  const grid = document.querySelector('.pricing-grid');
-  const cards = document.querySelectorAll('.pricing-card');
+function initGenericCarousel(wrapperSelector, gridSelector, cardSelector, intervalMs = 3500) {
+  const wrapper = document.querySelector(wrapperSelector);
+  if (!wrapper) return;
+  const grid = wrapper.querySelector(gridSelector);
+  const cards = wrapper.querySelectorAll(cardSelector);
   if (!grid || cards.length === 0) return;
 
   let intervalId = null;
   let currentIndex = 0;
-  const slideDuration = 3500; // 3.5秒（3500ミリ秒）
-  let isTransitioning = false; // 重複スクロール防止フラグ
+  let isTransitioning = false;
+  let isVisible = false;
 
-  // スライドを次のカードへ移動する関数
+  // 自動スライドを開始
   function startAutoSlide() {
     stopAutoSlide();
     intervalId = setInterval(() => {
-      // 画面幅が992pxより大きい（PC表示）の場合は処理しない
       if (window.innerWidth > 992) return;
-
-      currentIndex = (currentIndex + 1) % cards.length;
+      const currentCards = wrapper.querySelectorAll(cardSelector);
+      currentIndex = (currentIndex + 1) % currentCards.length;
       scrollToIndex(currentIndex);
-    }, slideDuration);
+    }, intervalMs);
   }
 
-  // 自動スライドの一時停止
+  // 自動スライドを停止
   function stopAutoSlide() {
     if (intervalId) {
       clearInterval(intervalId);
@@ -418,17 +423,19 @@ function initPricingCarousel() {
     }
   }
 
-  // 指定インデックスのカードへスクロール
+  // スクリプト移動処理
   function scrollToIndex(index) {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    const card = cards[index];
+    const currentCards = wrapper.querySelectorAll(cardSelector);
+    if (!currentCards[index]) {
+      isTransitioning = false;
+      return;
+    }
+    const card = currentCards[index];
     const gridStyle = window.getComputedStyle(grid);
-    const gap = parseInt(gridStyle.gap) || 16;
     const paddingLeft = parseInt(gridStyle.paddingLeft) || 16;
-
-    // カードのオフセットからコンテナのパディングを引いた正確なスクロール位置を計算
     const targetScrollLeft = card.offsetLeft - paddingLeft;
 
     grid.scrollTo({
@@ -436,33 +443,27 @@ function initPricingCarousel() {
       behavior: 'smooth'
     });
 
-    // スムーズスクロール完了後にフラグを下ろす（おおむね500ms）
     setTimeout(() => {
       isTransitioning = false;
     }, 500);
   }
 
-  // ユーザーのスクロール/スワイプ操作を検知して自動スライドをポーズ
+  // 手動操作のバッティング制御
   let scrollTimeout;
   grid.addEventListener('scroll', () => {
     if (window.innerWidth > 992) return;
-
-    // スクロール検知中はタイマーをクリアして自動スライドを一時停止
     stopAutoSlide();
-
-    // スクロールが終了した（＝150ms間スクロールイベントが来ない）タイミングでインデックスを検知して再開
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
       const gridStyle = window.getComputedStyle(grid);
-      const gap = parseInt(gridStyle.gap) || 16;
       const paddingLeft = parseInt(gridStyle.paddingLeft) || 16;
-      
-      // スクロール完了位置から、一番近いカードのインデックスを計算
       const scrollPos = grid.scrollLeft;
+      
       let closestIndex = 0;
       let minDistance = Infinity;
 
-      cards.forEach((card, idx) => {
+      const currentCards = wrapper.querySelectorAll(cardSelector);
+      currentCards.forEach((card, idx) => {
         const targetPos = card.offsetLeft - paddingLeft;
         const dist = Math.abs(scrollPos - targetPos);
         if (dist < minDistance) {
@@ -472,81 +473,59 @@ function initPricingCarousel() {
       });
 
       currentIndex = closestIndex;
-      startAutoSlide(); // 自動スライドをリスタート
+      startAutoSlide();
     }, 150);
   });
 
-  let isPricingVisible = false;
-
-  // IntersectionObserverによる画面内進入検知のセットアップ
-  const observerOptions = {
-    root: null, // ビューポート（画面）全体を基準にする
-    threshold: 0.15 // 料金プランセクションが画面内に15%以上入ったら検知
-  };
-
+  // 交差監視 (画面内に見えているときのみ起動)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        isPricingVisible = true;
-        // 画面内に入り、かつスマホ/タブレット表示の場合のみ自動スクロールを開始
+        isVisible = true;
         if (window.innerWidth <= 992) {
           startAutoSlide();
         }
       } else {
-        isPricingVisible = false;
-        stopAutoSlide(); // 画面外に外れたら自動スクロールを完全停止（リソース保護）
+        isVisible = false;
+        stopAutoSlide();
       }
     });
-  }, observerOptions);
+  }, { root: null, threshold: 0.15 });
 
-  // 料金セクション全体を監視対象にする
-  const pricingSection = document.getElementById('pricing');
-  if (pricingSection) {
-    observer.observe(pricingSection);
-  } else {
-    observer.observe(grid);
-  }
+  observer.observe(wrapper);
 
-  // 左右矢印ボタンのクリックイベントを設定
-  const prevBtn = document.querySelector('.pricing-carousel-wrapper .prev-btn');
-  const nextBtn = document.querySelector('.pricing-carousel-wrapper .next-btn');
+  // 左右矢印ボタンの連動
+  const prevBtn = wrapper.querySelector('.prev-btn');
+  const nextBtn = wrapper.querySelector('.next-btn');
 
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', () => {
-      // ボタン操作時は自動スライドタイマーを一時停止
       stopAutoSlide();
-      
-      // indexを1つ戻す (ループ対応)
-      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      const currentCards = wrapper.querySelectorAll(cardSelector);
+      currentIndex = (currentIndex - 1 + currentCards.length) % currentCards.length;
       scrollToIndex(currentIndex);
-      
-      // 操作完了後に自動スライドをリスタート
       startAutoSlide();
     });
 
     nextBtn.addEventListener('click', () => {
       stopAutoSlide();
-      
-      // indexを1つ進める (ループ対応)
-      currentIndex = (currentIndex + 1) % cards.length;
+      const currentCards = wrapper.querySelectorAll(cardSelector);
+      currentIndex = (currentIndex + 1) % currentCards.length;
       scrollToIndex(currentIndex);
-      
       startAutoSlide();
     });
   }
 
-  // PC ⇔ タブレット/スマホ間のサイズ切り替え時の監視
+  // 画面リサイズ監視
   window.addEventListener('resize', () => {
     if (window.innerWidth > 992) {
       stopAutoSlide();
-      grid.scrollTo({ left: 0 }); // PC版に戻ったらスクロールをリセット
+      grid.scrollTo({ left: 0 });
       currentIndex = 0;
     } else {
-      // スマホサイズに変わり、かつ料金表が画面内に見えている時のみ自動スライドを再開
-      if (isPricingVisible && !intervalId) {
+      if (isVisible && !intervalId) {
         startAutoSlide();
       }
     }
   });
 }
-

@@ -428,7 +428,14 @@
           Labsでは、お客様の目標に合わせて「eSportsチーム向け」と「企業向け」の2つの特化アプローチをご提供しています。詳細は各専用ページをご覧ください。
         </p>
 
-        <div class="branch-grid">
+        <div class="branch-carousel-wrapper">
+          <button class="carousel-btn prev-btn" aria-label="前のサービスへ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <div class="branch-grid">
           <!-- esports card -->
 
           <article class="branch-card esports-gateway glass-panel gsap-fade-up">
@@ -493,6 +500,12 @@
             >
           </article>
         </div>
+          <button class="carousel-btn next-btn" aria-label="次のサービスへ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
 
         <!-- CTA 1 (Services下) -->
 
@@ -540,7 +553,21 @@
 
         <!-- Dynamic projects populated by assets/js/projects.js -->
 
-        <div id="projects-container" class="projects-grid"></div>
+        <div class="projects-carousel-wrapper">
+          <button class="carousel-btn prev-btn" aria-label="前の実績へ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <div id="projects-container" class="projects-grid"></div>
+
+          <button class="carousel-btn next-btn" aria-label="次の実績へ" onclick="this.blur();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
 
         <!-- CTA 2 (Projects下) -->
 

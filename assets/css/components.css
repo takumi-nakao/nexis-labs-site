@@ -1049,13 +1049,19 @@ textarea.form-input {
 /* ==========================================================================
    RESPONSIVE DESIGN (BREAKPOINTS)
    ========================================================================== */
-/* Pricing Carousel Navigation Elements */
-.pricing-carousel-wrapper {
+
+
+/* Reusable Carousel Layout & Navigation Elements */
+.pricing-carousel-wrapper,
+.branch-carousel-wrapper,
+.projects-carousel-wrapper {
   position: relative;
   width: 100%;
 }
 
-.pricing-carousel-wrapper .carousel-btn {
+.pricing-carousel-wrapper .carousel-btn,
+.branch-carousel-wrapper .carousel-btn,
+.projects-carousel-wrapper .carousel-btn {
   display: none;
   position: absolute;
   top: 50%;
@@ -1076,31 +1082,98 @@ textarea.form-input {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.pricing-carousel-wrapper .carousel-btn svg {
+.pricing-carousel-wrapper .carousel-btn svg,
+.branch-carousel-wrapper .carousel-btn svg,
+.projects-carousel-wrapper .carousel-btn svg {
   width: 20px;
   height: 20px;
 }
 
-.pricing-carousel-wrapper .prev-btn {
+.pricing-carousel-wrapper .prev-btn,
+.branch-carousel-wrapper .prev-btn,
+.projects-carousel-wrapper .prev-btn {
   left: 0;
 }
 
-.pricing-carousel-wrapper .next-btn {
+.pricing-carousel-wrapper .next-btn,
+.branch-carousel-wrapper .next-btn,
+.projects-carousel-wrapper .next-btn {
   right: 0;
 }
 
-.pricing-carousel-wrapper .carousel-btn:hover {
+.pricing-carousel-wrapper .carousel-btn:hover,
+.branch-carousel-wrapper .carousel-btn:hover,
+.projects-carousel-wrapper .carousel-btn:hover {
   background: rgba(6, 182, 212, 0.08);
   border-color: var(--accent-cyan);
   color: var(--accent-cyan);
   box-shadow: 0 0 15px rgba(6, 182, 212, 0.35);
 }
 
-.pricing-carousel-wrapper .carousel-btn:active {
+.pricing-carousel-wrapper .carousel-btn:active,
+.branch-carousel-wrapper .carousel-btn:active,
+.projects-carousel-wrapper .carousel-btn:active {
   transform: translateY(-50%) scale(0.95);
 }
 
 @media (max-width: 992px) {
+  /* 共通のカルーセルレイアウト上書き（スマホ・タブレット） */
+  .pricing-carousel-wrapper,
+  .branch-carousel-wrapper,
+  .projects-carousel-wrapper {
+    padding: 0 20px !important;
+  }
+
+  .pricing-carousel-wrapper .carousel-btn,
+  .branch-carousel-wrapper .carousel-btn,
+  .projects-carousel-wrapper .carousel-btn {
+    display: flex !important; /* ボタンを表示 */
+  }
+
+  .pricing-carousel-wrapper .prev-btn,
+  .branch-carousel-wrapper .prev-btn,
+  .projects-carousel-wrapper .prev-btn {
+    left: -5px !important;
+  }
+
+  .pricing-carousel-wrapper .next-btn,
+  .branch-carousel-wrapper .next-btn,
+  .projects-carousel-wrapper .next-btn {
+    right: -5px !important;
+  }
+
+  /* カルーセル用の横並び flex コンテナ化 */
+  .pricing-grid,
+  .branch-grid,
+  .projects-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: var(--space-md) !important;
+    padding: var(--space-md) var(--space-sm) !important;
+    scrollbar-width: none !important;
+  }
+
+  .pricing-grid::-webkit-scrollbar,
+  .branch-grid::-webkit-scrollbar,
+  .projects-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* 各カードの幅を横スライド用に85%化 */
+  .pricing-card,
+  .branch-card,
+  .project-card {
+    flex: 0 0 85% !important;
+    scroll-snap-align: center !important;
+    margin: 0 !important;
+    min-width: 280px !important;
+  }
+
   /* コンテナ余白・グリッド枠の最適化 (タブレット) */
   .container {
     padding: 0 var(--space-sm) !important;
@@ -1132,45 +1205,7 @@ textarea.form-input {
     grid-template-columns: repeat(2, 1fr); /* タブレット 2列 */
   }
 
-  /* 料金プランカルーセル表示（992px以下） */
-  .pricing-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    grid-template-columns: none !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    scroll-behavior: smooth !important;
-    -webkit-overflow-scrolling: touch !important;
-    gap: var(--space-md) !important;
-    padding: var(--space-md) var(--space-sm) !important;
-    scrollbar-width: none !important; /* Firefox */
-  }
 
-  .pricing-grid::-webkit-scrollbar {
-    display: none !important; /* Chrome, Safari, Opera */
-  }
-
-  .pricing-card {
-    flex: 0 0 85% !important; /* カード幅を85%にし、次のカードの端を少し見せる */
-    scroll-snap-align: center !important; /* 吸着位置を画面中央にする */
-    margin: 0 !important;
-    min-width: 280px !important;
-  }
-  .pricing-carousel-wrapper {
-    padding: 0 20px;
-  }
-
-  .pricing-carousel-wrapper .carousel-btn {
-    display: flex; /* Mobile & Tablet: show navigation buttons */
-  }
-
-  .pricing-carousel-wrapper .prev-btn {
-    left: -5px;
-  }
-
-  .pricing-carousel-wrapper .next-btn {
-    right: -5px;
-  }
 }
 
 @media (max-width: 768px) {
